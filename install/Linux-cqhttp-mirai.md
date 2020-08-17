@@ -74,14 +74,14 @@ sh yobotg.sh
 
 根据你的系统架构选择执行文件（大部分服务器是 amd64）
 
-amd64: `https://scyb.pcr.works:34767/114EEF36CEA19E2846ECB149E88899AC`  
-arm: `https://scyb.pcr.works:34767/D3ECC6296AB49746908BB937C2E137D6`  
-arm64: `https://scyb.pcr.works:34767/56ECFB60C9A0D234AE60FAB86995311B`
+amd64: `http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_amd64`  
+arm: `http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_arm`  
+arm64: `http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_arm64`
 
 ```shell
 mkdir -p ~/qqbot/mirai/plugins/CQHTTPMirai
 cd ~/qqbot/mirai
-wget https://scyb.pcr.works:34767/114EEF36CEA19E2846ECB149E88899AC -O miraiOK
+wget http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_amd64 -O miraiOK
 ```
 
 #### 下载 cqhttp-mirai
@@ -91,8 +91,8 @@ wget https://scyb.pcr.works:34767/114EEF36CEA19E2846ECB149E88899AC -O miraiOK
 ```shell
 cd ~/qqbot/mirai/plugins
 
-wget https://github.com/yyuueexxiinngg/cqhttp-mirai/releases/download/0.1.9/cqhttp-mirai-0.1.9-all.jar
-# 国内可改用 https://github-proxy.yobot.win/yyuueexxiinngg/cqhttp-mirai/releases/0.1.9/cqhttp-mirai-0.1.9-all.jar
+wget https://github.com/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.1/cqhttp-mirai-0.2.1-all.jar
+# 国内可改用 https://download.fastgit.org/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.1/cqhttp-mirai-0.2.1-all.jar
 ```
 
 #### 修改 CQHTTPMirai 配置文件
@@ -116,7 +116,7 @@ vim setting.yml
       reverseHost: 127.0.0.1
       reversePort: 9222
       reversePath: /ws/
-      accessToken: null  # 这里可以填写之前准备好的 access_token
+      accessToken: null  # 这里也可以填写事先准备好的 access_token
       reconnectInterval: 3000
 ```
 

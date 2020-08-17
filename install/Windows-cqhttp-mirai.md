@@ -15,12 +15,13 @@
 ### 部署 mirai
 
 下载 miraiOK  
-[miraiOK 64 位](https://scyb.pcr.works:34767/9E97051429823CF28A3279DA987EE921)  
-[miraiOK 32 位](https://scyb.pcr.works:34767/4D42C1C5A1CBF95AFE7E6B34368308B3)
+[miraiOK 64 位](http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_windows_amd64.exe)  
+[miraiOK 32 位](http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_windows_386.exe)
 
-修改文件名为 `miraiOK.exe`，双击启动
+双击启动
 
-下载 [CQHTTPMirai.jar](https://github.com/yyuueexxiinngg/cqhttp-mirai/releases/download/0.1.9/cqhttp-mirai-0.1.9-all.jar) 并放在 `.\plugins` 目录里
+下载 [CQHTTPMirai.jar](https://github.com/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.1/cqhttp-mirai-0.2.1-all.jar) 并放在 `.\plugins` 目录里  
+国内下载较慢可改用 [CQHTTPMirai.jar](https://download.fastgit.org/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.1/cqhttp-mirai-0.2.1-all.jar)
 
 新建 CQHTTPMirai 配置文件在 `.\plugins\CQHTTPMirai\setting.yml`，修改配置文件如下（注意修改 QQ 号）
 

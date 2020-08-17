@@ -26,6 +26,8 @@ themeConfig:
           link: /install/Linux-cqhttp-mirai/
         - text: Windows 部署
           link: /install/Windows-mirai-auto/
+        - text: Docker
+          link: /install/docker/
     - text: 使用方法
       items:
         - text: 功能表
