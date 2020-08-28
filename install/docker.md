@@ -28,16 +28,16 @@ sudo docker pull yobot/yobot
 
 ```shell
 # 下载镜像包
-wget http://x-download.yobot.win/yobot-dockersave.tar.gz -o yobot-dockersave.tar.gz
+wget http://x-download.yobot.win/yobot-3.6.4-dockersave.tar.gz
 
 # 校验文件
-md5sum yobot-dockersave.tar.gz  # 应该输出 51e0ed0bab415534f7065587f13a9161，否则请勿继续
+md5sum yobot-3.6.4-dockersave.tar.gz  # 应该输出 47b9ae0e7068230c54e8d43c1c7d0e6f，否则请勿继续
 
 # 解压
-gzip -d yobot-dockersave.tar.gz
+gzip -d yobot-3.6.4-dockersave.tar.gz
 
 # 载入镜像包
-sudo docker load -i yobot-dockersave.tar
+sudo docker load -i yobot-3.6.4-dockersave.tar
 ```
 
 </details>
@@ -48,7 +48,7 @@ sudo docker load -i yobot-dockersave.tar
 sudo docker run -d \
                 --name yobot \
                 -p 9222:9222 \
-                -v $(pwd)/yobot_data:/home/yobot/yobot/src/client/yobot_data \
+                -v $(pwd)/yobot_data:/yobot/yobot_data \
                 --network qqbotnet \
                 yobot/yobot
 ```
@@ -71,9 +71,11 @@ sudo docker pull lqbing/miraiok
 botqqid=123456789
 botqqpswd="ABCabc123.,!"
 
-miraidir=$(pwd)/mirai  # 持久化文件夹
+# 创建持久化文件夹
+miraidir=$(pwd)/mirai
 mkdir ${miraidir}
 
+# 配置自动登录文件
 echo "
 ----------
 login ${botqqid} ${botqqpswd}
@@ -84,6 +86,7 @@ login ${botqqid} ${botqqpswd}
 # 最后一个换行不可省略
 # 换行必须使用 \n，不能用 \r\n（不要在 Windows 下编辑再上传）
 
+# 配置 cqhttp-mirai
 echo "
 \"${botqqid}\":
   ws_reverse:
@@ -100,10 +103,10 @@ echo "
 启动
 
 ```shell
-sudo docker run -dt \
+sudo docker run -dt \  # 首次启动建议使用 -it 在前台交互，以便输入验证码
                 --name miraiok \
                 -v ${miraidir}/tmp:/tmp \
-                -v ${miraidir}/config.txt:workdir/config.txt \
+                -v ${miraidir}/config.txt:/workdir/config.txt \
                 -v ${miraidir}/setting.yml:/workdir/plugins/CQHTTPMirai/setting.yml \
                 -v ${miraidir}/device.json:/workdir/device.json \
                 -v ${miraidir}/log:/workdir/log \

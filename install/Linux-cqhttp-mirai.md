@@ -24,6 +24,8 @@ yum install -y python3 screen wget git
 # apt-get install -y python3 screen wget git
 ```
 
+请确认 python 版本至少为 3.6，如果 `python3 -V` 显示版本低于 3.6，请安装新版 python
+
 #### （可选）新建一个 linux 用户
 
 > 使用低权限的用户可以减少意外时的损失
@@ -72,7 +74,7 @@ sh yobotg.sh
 
 #### 下载 miraiOK
 
-根据你的系统架构选择执行文件（大部分服务器是 amd64）
+根据你的系统架构选择执行文件（大部分服务器是 amd64，可以使用 `dpkg --print-architecture` 命令查看）
 
 amd64: `http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_amd64`  
 arm: `http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_arm`  
