@@ -46,7 +46,7 @@ yobot 自动添加第一个登录的用户为最高权限，如果需要手动�
 
 ### yobot 如何多开
 
-请阅读[多开教程](./multi-instances.md)
+请阅读[多开教程](./mirai-multi-instances.md)
 
 ### 使用反向代理后，用户 ip 变为 127.0.0.1
 
@@ -84,4 +84,4 @@ sudo echo 'Asia/Shanghai' > /etc/timezone
 
 ### 这里没有我的问题
 
-可以在QQ群（{{ [770947581,1044314369,1067699252,774394459][Math.floor(Math.random()*4)] }}）或[github issue](https://github.com/pcrbot/yobot/issues)提问，提问前可以阅读[正确的提问姿势](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways/blob/master/README.md)
+可以在QQ群（{{ [770947581,774394459][Math.floor(Math.random()*2)] }}）或[github issue](https://github.com/pcrbot/yobot/issues)提问，提问前可以阅读[正确的提问姿势](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways/blob/master/README.md)

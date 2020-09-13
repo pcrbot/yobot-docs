@@ -2,6 +2,4 @@
 
 已移除
 
-说明：
-
-由于酷Q的退出，cqhttp 被多个项目重新实现。由于接口的限制，这些重新实现的项目对请求表现可能不一致，所以 yobot 不再提供 “插件版”
+yobot 不再提供 “插件版” 支持，如果你希望 yobot 与其他 cqhttp bot 共存，请使用 cqhttp 的[多开功能](../usage/mirai-multi-instances.md)
