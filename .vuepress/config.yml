@@ -23,7 +23,7 @@ themeConfig:
     - text: 安装方法
       items:
         - text: Linux 部署
-          link: /install/Linux-cqhttp-mirai/
+          link: /install/Linux-gocqhttp/
         - text: Windows 部署
           link: /install/Windows-mirai-auto/
         - text: Docker
