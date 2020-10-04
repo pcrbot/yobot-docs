@@ -1,5 +1,10 @@
 # 更新日志
 
+## 3.6.5
+
+- 统计：均值偏差（[Alive24/pcr-clan-battle-analyzer-vue](https://github.com/Alive24/pcr-clan-battle-analyzer-vue)）
+- 对 docker 更好的支持
+
 ## 3.6.4
 
 - 优化用户列表

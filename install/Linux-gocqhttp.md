@@ -96,16 +96,16 @@ cd ~/qqbot/mirai
 vim config.json
 ```
 
-修改配置文件如下（请按照注释修改内容，并删除注释）
+修改配置文件如下
 
 ```json
 {
-  "uin": 0,  // 作为机器人的 QQ 号
-  "password": "",  // 作为机器人的 QQ 密码
+  "uin": 0, "←--------------------注释1": "作为机器人的 QQ 号",
+  "password": "", "←--------------注释2": "作为机器人的 QQ 密码",
   "encrypt_password": false,
   "password_encrypted": "",
-  "enable_db": false,  // 内置数据库，yobot 不需要，某些其他插件可能需要
-  "access_token": "",  // 这里也可以填写事先准备好的 access_token
+  "enable_db": false, "←----------注释3": "内置数据库，yobot 不需要，某些其他插件可能需要",
+  "access_token": "", "←----------注释4": "这里也可以填写事先准备好的 access_token",
   "relogin": {
     "enabled": true,
     "relogin_delay": 3,
@@ -132,7 +132,6 @@ vim config.json
       "reverse_url": "ws://localhost:9222/ws/",
       "reverse_reconnect_interval": 3000
     }
-    // 如需多开，请在这里添加字段
   ]
 }
 ```
