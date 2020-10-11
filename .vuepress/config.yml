@@ -22,12 +22,12 @@ themeConfig:
       link: /
     - text: 安装方法
       items:
-        - text: Linux 部署
+        - text: Linux 一键部署
+          link: /install/docker-script/
+        - text: Linux 手动部署
           link: /install/Linux-gocqhttp/
         - text: Windows 部署
           link: /install/Windows-mirai-auto/
-        - text: Docker
-          link: /install/docker/
     - text: 使用方法
       items:
         - text: 功能表

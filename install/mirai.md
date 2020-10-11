@@ -14,4 +14,6 @@ yobot 原生于 cqhttp，利用 [cqhttp-mirai](https://github.com/yyuueexxiinngg
 
 ## Docker （测试）
 
+[自动部署脚本](./docker-script.md)
+
 [详细说明](./docker.md)
