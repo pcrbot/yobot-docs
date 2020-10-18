@@ -4,9 +4,17 @@
 
 本文为便携版部署方式
 
+### 环境准备
+
+#### 安装依赖
+
+安装 JRE (OpenJDK 11)
+
+[点击下载](https://github.com/ojdkbuild/ojdkbuild/releases/download/java-11-openjdk-11.0.8.10-1/java-11-openjdk-jre-11.0.8.10-1.windows.ojdkbuild.x86_64.msi)，双击安装
+
 ### 部署 yobot
 
-下载[yobot 便携版](https://yobot.lanzous.com/b00nlr3ni)
+下载 [yobot 便携版](https://yobot.lanzous.com/b00nlr3ni)
 
 解压后双击“yobot.exe”启动服务
 
@@ -14,14 +22,27 @@
 
 ### 部署 mirai
 
-下载 miraiOK  
-[miraiOK 64 位](http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_windows_amd64.exe)  
-[miraiOK 32 位](http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_windows_386.exe)
+先准备如下的目录结构
 
-双击启动
+```treeview
+mirai\
+├── libs\
+├── config\
+│   └── Console\
+└── plugins\
+    └── CQHTTPMirai\
+```
 
-下载 [CQHTTPMirai.jar](https://github.com/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.1/cqhttp-mirai-0.2.1-all.jar) 并放在 `.\plugins` 目录里  
-国内下载较慢可改用 [CQHTTPMirai.jar](https://download.fastgit.org/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.1/cqhttp-mirai-0.2.1-all.jar)
+下载 1.[mirai-core](https://github.com/project-mirai/mirai-repo/raw/master/shadow/mirai-core-qqandroid/mirai-core-qqandroid-1.3.0.jar) 2.[mirai-console](https://github.com/project-mirai/mirai-repo/raw/master/shadow/mirai-console/mirai-console-1.0-RC-dev-28.jar) 3.[mirai-console-terminal](https://github.com/project-mirai/mirai-repo/raw/master/shadow/mirai-console-terminal/mirai-console-terminal-1.0-RC-dev-28.jar) 三件套并放在 `.\libs` 目录里  
+
+下载 [CQHTTPMirai.jar](https://github.com/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.3/cqhttp-mirai-0.2.3-all.jar) 并放在 `.\plugins` 目录里  
+
+新建 Mirai 配置文件在 `.\config\Console\AutoLogin.yml`，修改配置文件如下（前面是QQ号，后面是密码）
+
+```yaml
+plainPasswords:
+  123456654321: example
+```
 
 新建 CQHTTPMirai 配置文件在 `.\plugins\CQHTTPMirai\setting.yml`，修改配置文件如下（注意修改 QQ 号）
 
@@ -40,9 +61,16 @@
       reconnectInterval: 3000
 ```
 
-重新启动 miraiOK 并登录
+新建入口文件在 `.\start-mirai.bat`，内容如下
 
-在 mirai 控制台里登录 QQ `login 1234567890 ppaasswwdd`
+```batch
+@echo off
+title Mirai Console
+java -cp "./libs/*" net.mamoe.mirai.console.terminal.MiraiConsoleTerminalLoader %*
+pause
+```
+
+双击 `start-mirai.bat` 启动 mirai
 
 部署完成
 

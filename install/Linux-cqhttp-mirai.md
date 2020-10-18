@@ -18,23 +18,13 @@
 
 ```shell
 # RHEL / CentOS:
-yum install -y python3 screen wget git
+yum install -y python3 screen wget git java-11-openjdk
 
-# Debain / Ubuntu
-# apt-get install -y python3 screen wget git
+# Debain / Ubuntu:
+apt-get install -y python3 screen wget git openjdk-11-jre-headless
 ```
 
 请确认 python 版本至少为 3.6，如果 `python3 -V` 显示版本低于 3.6，请安装新版 python
-
-#### （可选）新建一个 linux 用户
-
-> 使用低权限的用户可以减少意外时的损失
-
-```shell
-groupadd qqbot
-useradd -g qqbot -m qqbot
-su - qqbot
-```
 
 #### 使用终端复用器
 
@@ -72,37 +62,40 @@ sh yobotg.sh
 
 ### 部署 mirai
 
-#### 下载 miraiOK
-
-根据你的系统架构选择执行文件（大部分服务器是 amd64，可以使用 `dpkg --print-architecture` 命令查看）
-
-amd64: `http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_amd64`  
-arm: `http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_arm`  
-arm64: `http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_arm64`
+#### 下载 mirai
 
 ```shell
-mkdir -p ~/qqbot/mirai/plugins/CQHTTPMirai
-cd ~/qqbot/mirai
-wget http://t.imlxy.net:64724/mirai/MiraiOK/miraiOK_linux_amd64 -O miraiOK
+github_src="github.com"
+# 国内速度较慢可改为下面的镜像
+# github_src="github-proxy.yobot.win"
+
+mkdir -p ~/qqbot/mirai/plugins/CQHTTPMirai ~/qqbot/mirai/libs
+cd ~/qqbot/mirai/libs
+wget https://${github_src}/project-mirai/mirai-repo/raw/master/shadow/mirai-core-qqandroid/mirai-core-qqandroid-1.3.0.jar \
+     https://${github_src}/project-mirai/mirai-repo/raw/master/shadow/mirai-console/mirai-console-1.0-RC-dev-28.jar \
+     https://${github_src}/project-mirai/mirai-repo/raw/master/shadow/mirai-console-terminal/mirai-console-terminal-1.0-RC-dev-28.jar
+cd ~/qqbot/mirai/plugins
+wget https://${github_src}/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.3/cqhttp-mirai-0.2.3-all.jar
 ```
 
-#### 下载 cqhttp-mirai
-
-你也可以在[这里](https://github.com/yyuueexxiinngg/cqhttp-mirai/releases)找到最新版本
+#### 修改 Mirai 配置文件
 
 ```shell
-cd ~/qqbot/mirai/plugins
+mkdir -p ~/qqbot/mirai/config/Console
+vim ~/qqbot/mirai/config/Console/AutoLogin.yml
+```
 
-wget https://github.com/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.1/cqhttp-mirai-0.2.1-all.jar
-# 国内可改用 https://download.fastgit.org/yyuueexxiinngg/cqhttp-mirai/releases/download/0.2.1/cqhttp-mirai-0.2.1-all.jar
+修改配置文件如下（前面是QQ号，后面是密码）
+
+```yaml
+plainPasswords:
+  123456654321: example
 ```
 
 #### 修改 CQHTTPMirai 配置文件
 
 ```shell
-cd ~/qqbot/mirai/plugins/CQHTTPMirai
-vim setting.yml
-# 如果你不熟悉 vim，建议使用 nano
+vim ~/qqbot/mirai/plugins/CQHTTPMirai/setting.yml
 ```
 
 修改配置文件如下（注意修改 QQ 号）
@@ -122,35 +115,42 @@ vim setting.yml
       reconnectInterval: 3000
 ```
 
-#### 启动 miraiOK 并登录 QQ
+#### 确认配置
+
+通过 tree 命令确认一下目录结构
 
 ```shell
 cd ~/qqbot/mirai
-chmod +x miraiOK
-./miraiOK
+tree
+```
 
-# （mirai-console内）
-login 123456789 ppaasswwdd # 注意改成你的QQ小号的账号密码
+最终目录结构应该是
+
+```treeview
+mirai\
+├── config\
+│   └── Console\
+│       └── AutoLogin.yml\
+├── libs\
+│   ├── mirai-console-1.0-RC-dev-28.jar
+│   ├── mirai-console-terminal-1.0-RC-dev-28.jar
+│   └── mirai-core-qqandroid-1.3.0.jar
+└── plugins\
+    ├── CQHTTPMirai\
+    │   └── setting.yml
+    └── cqhttp-mirai-0.2.3-all.jar
+```
+
+#### 启动 mirai
+
+```shell
+cd ~/qqbot/mirai
+
+# 启动命令比较复杂，建议新建一个 start-mirai.sh 将命令填入，方便今后使用
+java -cp "./libs/*" net.mamoe.mirai.console.terminal.MiraiConsoleTerminalLoader
 ```
 
 部署完成，现在可以按下 `ctrl-a , d` 连续组合键挂起这两个 shell
-
-#### （可选）为 miraiOK 设置自动登录
-
-编辑 `~/qqbot/mirai/config.txt`，内容如下
-
-```txt
-----------
-login 123456789 ppaasswwdd
-
-```
-
-注意：
-
-- 第一行的 `----------` 不可省略
-- 最后一个换行不可省略
-- 换行必须使用 `\n`，不能用 `\r\n`（不要在 Windows 下编辑再上传）
-- 如果要登录多个账号可填写多行 `login`
 
 ## 验证安装
 

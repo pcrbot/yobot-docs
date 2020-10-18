@@ -7,9 +7,13 @@
 在合适的路径执行
 
 ```shell
-curl -fsSL https://get.yobot.win/install.sh -o yobot-installer.sh
-sudo bash yobot-installer.sh
+curl -fsSL https://get.yobot.win/install.sh -o yobot-installer.sh && sudo bash yobot-installer.sh
 ```
+
+注意：
+
+- CentOS 8 需要手动安装 docker 后才能使用此脚本，新手推荐使用 Ubuntu。
+- 此脚本会从美国服务器下载文件，国内服务器使用此脚本可能速度较慢。
 
 <details>
   <summary>这个脚本做了什么？（点击展开）</summary>
