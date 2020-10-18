@@ -55,7 +55,7 @@
 
 国内域名商：[腾讯dnspod](https://dnspod.cloud.tencent.com/)、[阿里万网](https://wanwang.aliyun.com/domain/)  
 境外域名商：[namesilo](https://namesilo.com/)、[porkbun](https://porkbun.com/)  
-免费域名：[freenom](https://www.freenom.com)（条款严格）
+免费域名：[freenom](https://www.freenom.com)（条款严格）<br>免费二级域名: [pcrlife](https://pcr.life/) ( ssl 请上 caddy )
 
 ### 储存空间
 

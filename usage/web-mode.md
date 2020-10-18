@@ -101,6 +101,23 @@ server {
 </VirtualHost>
 ```
 
+### 方法 4 : 使用 caddy 代理 ( 兼顾 ssl 的最简单方式 )
+
+下载安装 `caddy` ，配置好环境变量。
+
+此指令中的 `example.com` 替换成你自己的域名。
+
+```shell
+echo "https://example.com {
+ gzip
+ tls /.caddy/acme/acme-v01.api.letsencrypt.org/sites/example.com/example.com.crt /.caddy/acme/acme-v01.api.letsencrypt.org/sites/example.com/example.com.key
+ proxy / http://127.0.0.1:9222
+}" > /usr/local/caddy/Caddyfile
+#此段是一个指令, 请整段复制
+```
+
+
+
 ## 开始使用 Web 模式
 
 向机器人私聊发送“登录”即可
