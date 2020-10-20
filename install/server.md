@@ -55,8 +55,14 @@
 
 国内域名商：[腾讯dnspod](https://dnspod.cloud.tencent.com/)、[阿里万网](https://wanwang.aliyun.com/domain/)  
 境外域名商：[namesilo](https://namesilo.com/)、[porkbun](https://porkbun.com/)  
-免费域名：[freenom](https://www.freenom.com)（条款严格）<br>免费二级域名: [pcrlife](https://pcr.life/) ( ssl 请上 caddy )
+免费域名：[freenom](https://www.freenom.com)（条款严格，经常封号）
+
+本项目也提供[免费二级域名](https://pcr.life/)
 
 ### 储存空间
 
 Office 开发者订阅 5T 储存空间（[教程](https://zhuanlan.zhihu.com/p/105438817)）
+
+### CDN
+
+[Cloudflare](https://cloudflare.com)（美国线路，国内机器请勿使用）

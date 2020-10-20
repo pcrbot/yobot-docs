@@ -51,7 +51,7 @@ server {
 
   location /
   {
-    proxy_pass http://localhost:9222;  # 反向代理
+    proxy_pass http://127.0.0.1:9222;  # 反向代理
     proxy_set_header X-Real-IP $remote_addr;  # 传递用户IP
   }
 
@@ -68,9 +68,9 @@ server {
   #  expires 30d;
   #}
 
-  # 阻止酷Q接口被访问(可选，安全)
+  # 阻止 cqhttp 接口被访问(可选，安全)
   location /ws/ {
-    # allow 172.16.0.0/12;  # 允许酷Q通过（yobot与酷Q不在同一个服务器上时使用，ip为酷Q所在服务器的ip）
+    # allow 172.16.0.0/12;  # 允许 cqhttp 通过（yobot与 cqhttp 不在同一个服务器上时使用，ip为 cqhttp 所在服务器的ip）
     deny all;
   }
 }
@@ -82,7 +82,7 @@ server {
 
 ```apacheconf
 <VirtualHost *:80>
-  Servername io.yobot.xyz
+  Servername io.yobot.xyz  # 你的域名
   ProxyRequests Off
   <Proxy *>
     Order Deny, Allow
@@ -92,7 +92,7 @@ server {
     ProxyPass http://localhost:9222/
     ProxyPassReverse http://localhost:9222/
   </Location>
-  <Location "/ws/">  # 阻止酷Q接口被访问
+  <Location "/ws/">  # 阻止 cqhttp 接口被访问
   AllowOverride None
     Order Deny, Allow
     Deny from All
@@ -107,16 +107,18 @@ server {
 
 此指令中的 `example.com` 替换成你自己的域名。
 
-```shell
-echo "https://example.com {
- gzip
- tls /.caddy/acme/acme-v01.api.letsencrypt.org/sites/example.com/example.com.crt /.caddy/acme/acme-v01.api.letsencrypt.org/sites/example.com/example.com.key
- proxy / http://127.0.0.1:9222
-}" > /usr/local/caddy/Caddyfile
-#此段是一个指令, 请整段复制
+```caddyfile
+io.yobot.xyz {  # 你的域名
+
+  respond /ws/* "Forbidden" 403 {
+    close
+  }
+
+  reverse_proxy / http://127.0.0.1:9222 {
+    header_up X-Real-IP {remote}  # 传递用户IP
+  }
+}
 ```
-
-
 
 ## 开始使用 Web 模式
 

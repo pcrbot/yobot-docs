@@ -38,7 +38,7 @@ yobot 自动添加第一个登录的用户为最高权限，如果需要手动�
 
 ### 如何添加自定义的新闻推送
 
-使用源码运行时，在 `ybplugins/push_news.py` 文件第 33 行开始填写 RSS。或者在[插件社区](https://cqp.cc/b/app)下载专门的 RSS 推送插件。
+使用源码运行时，在 `ybplugins/push_news.py` 文件第 33 行开始填写 RSS。
 
 ### 如何删除公会战成员
 
