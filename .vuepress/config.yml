@@ -28,6 +28,8 @@ themeConfig:
           link: /install/Linux-gocqhttp/
         - text: Windows 部署
           link: /install/Windows-mirai-auto/
+        - text: pcrbot 社区提供的部署方法
+          link: /install/community-installer/
     - text: 使用方法
       items:
         - text: 功能表
