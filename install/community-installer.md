@@ -6,12 +6,20 @@
 
 作者：[@Chendihe4975](https://github.com/Chendihe4975)
 
-[教程页面](https://blog.di.he.cn/2020/09/22/Linux-%E4%B8%8B%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%85%AC%E4%B8%BB%E8%BF%9E%E7%BB%93%E7%BE%A4%E8%81%8A%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%99%E7%A8%8B/)
+[教程页面](https://blog.di.he.cn/2020/09/22/deploy-a-priconne-bot-on-linux/)
 
-## 小仓唯bot一键部署脚本
+## 去角质腕骨的dai小仓唯bot一键部署脚本
 
 完备的 pcrbot 部署脚本，包含部署 HoshinoBot、yobot 以及大量的 pcrbot 社区插件。适合批量部署。
 
 作者：[@corvo007](https://github.com/corvo007)
 
-[下载页面](https://github.com/pcrbot/xcwbot-installer/releases/tag/FINAL)
+[下载页面](https://github.com/pcrbot/xcwbot-installer/releases/latest)
+
+## sanshan的小仓唯bot安装包
+
+完备的 pcrbot 部署脚本，包含部署 HoshinoBot、yobot 以及大量的 pcrbot 社区插件。
+
+作者：[@sanshanya](https://github.com/sanshanya)
+
+[下载页面](https://github.com/sanshanya/hoshino_xcw/wiki/%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B)

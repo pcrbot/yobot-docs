@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.6.6
+
+- 网页外观更新（[#190](https://github.com/pcrbot/yobot/pull/190)）
+
 ## 3.6.5
 
 - 统计：均值偏差（[Alive24/pcr-clan-battle-analyzer-vue](https://github.com/Alive24/pcr-clan-battle-analyzer-vue)）
@@ -38,7 +42,7 @@
 
 ## 3.5
 
-- 重置密码功能[#35](https://github.com/pcrbot/yobot/pull/35)
+- 重置密码功能（[#35](https://github.com/pcrbot/yobot/pull/35)）
 - 报刀留言功能
 
 ## 3.4

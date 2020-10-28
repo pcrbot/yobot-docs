@@ -1,4 +1,4 @@
-# 使用 Docker 自动脚本部署（测试）
+# 使用 Docker 自动脚本部署
 
 如果想手动部署请参考[部署说明](./Linux-gocqhttp.md)
 
@@ -14,6 +14,8 @@ curl -fsSL https://get.yobot.win/install.sh -o yobot-installer.sh && sudo bash y
 
 - CentOS 8 需要手动安装 docker 后才能使用此脚本，新手推荐使用 Ubuntu。
 - 此脚本会从美国服务器下载文件，国内服务器使用此脚本可能速度较慢。
+- 脚本执行完毕后，可能会出现登录验证，请按照提示完成验证。
+- 登录成功后，按下 `ctrl-P , ctrl-Q` 连续组合键挂起容器。
 
 <details>
   <summary>这个脚本做了什么？（点击展开）</summary>
@@ -26,37 +28,28 @@ curl -fsSL https://get.yobot.win/install.sh -o yobot-installer.sh && sudo bash y
 
 </details>
 
-脚本执行完毕后，可能会出现登录验证，请按照提示完成验证。
-
-登录成功后，按下 `ctrl-P , ctrl-Q` 连续组合键挂起容器。
-
 ## 参考命令
 
-停止 yobot 或 gocqhttp
+后期维护时，可能需要的指令
 
 ```shell
+# 停止 yobot 或 gocqhttp
 sudo docker stop yobot  # 只停止 yobot
 sudo docker stop gocqhttp  # 只停止 gocqhttp
 sudo docker stop yobot gocqhttp  # 同时停止
-```
 
-启动 yobot 与 gocqhttp
-
-```shell
+# 启动 yobot 与 gocqhttp
 sudo docker start yobot gocqhttp
-```
 
-重启 yobot 与 gocqhttp
-
-```shell
+# 重启 yobot 与 gocqhttp
 sudo docker restart yobot gocqhttp
-```
 
-查看 yobot 或 gocqhttp 日志
+# 查看 yobot 或 gocqhttp 日志
+sudo docker logs --tail 20 yobot  # 查看最后20条日志
+sudo docker logs --tail 20 gocqhttp
 
-```shell
-sudo docker logs yobot
-sudo docker logs gocqhttp
+# 重新将 gocqhttp 命令行移回前台
+sudo docker attach gocqhttp
 ```
 
 ## 验证安装

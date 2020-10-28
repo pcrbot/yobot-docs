@@ -19,11 +19,3 @@ jobs:
           BRANCH: gh-pages
           FOLDER: dist
           CLEAN: true
-
-      - name: Deploy to Server
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
-        with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist

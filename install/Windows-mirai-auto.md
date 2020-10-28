@@ -12,7 +12,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 Invoke-WebRequest https://get.yobot.win/install.ps1 -OutFile .\install.ps1 ; powershell -File install.ps1
 ```
 
-本方法适用于 PowerShell 3.0 以上，如果无法安装请使用[手动部署](./Windows-gocqhttp.md)
+如果安装出现问题也可以使用[手动部署](./Windows-gocqhttp.md)
 
 本脚本启动时会下载一些文件，如果出现下载失败，请检查网络是否顺畅，然后删除 `qqbot` 文件夹，重新运行脚本
 
