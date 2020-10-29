@@ -28,7 +28,7 @@ e.g. `http://10.10.10.10:9222/yobot/`
 
 :::
 
-### 方法 2：使用 Nginx 代理（功能最强）
+### 方法 2：使用 Nginx 代理
 
 如果需要为网页添加日志记录、HTTPS支持、安全限制等，或者需要同时部署其他站点，可以使用 Nginx、Apache 之类的服务器软件
 
@@ -78,27 +78,50 @@ server {
 
 ### 方法 3：使用 Apache 代理
 
-请根据服务器实际情况设定 Apache 代理，这里给出一个示例，**不要直接复制**
+Apache 支持从任何会被加载的 http-xxxx.conf 读取配置，即使配置本不应属于该文件
 
-```apacheconf
-<VirtualHost *:80>
-  Servername io.yobot.xyz  # 你的域名
-  ProxyRequests Off
-  <Proxy *>
-    Order Deny, Allow
-    Allow from All
-  </Proxy>
-  <Location />  # 反向代理
-    ProxyPass http://localhost:9222/
-    ProxyPassReverse http://localhost:9222/
-  </Location>
-  <Location "/ws/">  # 阻止 cqhttp 接口被访问
-  AllowOverride None
-    Order Deny, Allow
-    Deny from All
-  </Location>
-  RemoteIPHeader X-Real-IP  # 传递用户IP
+所以可以选择一个自己所喜好的，例如将所有的配置信息全部写在 httpd-ssl.conf 里面
+
+在 httpd.conf 内按需启用模块后，在 httpd-ssl.conf 内根据实际情况配置以下内容，**如遇到问题请自行配合 error.log 进行故障排除**
+
+```Apache24 tutorial - httpd-ssl.conf  # by Lancercmd https://github.com/Lancercmd
+Listen 443
+
+SSLProtocol all -SSLv3
+SSLProxyProtocol all -SSLv3
+
+<VirtualHost *:443>
+    ServerName io.yobot.xyz
+    ServerAlias io.yobot.xyz
+    SSLEngine on
+    <IfModule remoteip_module>
+        RemoteIPHeader X-Forward-For
+        RemoteIPInternalProxy 127.0.0.1/24
+    </IfModule>
+    <Location />
+        ProxyPass http://localhost:9222
+        ProxyPassReverse http://localhost:9222
+    </Location>
+    <Location /cqhttp/ws/>
+        Deny from All
+    </Location>
+    <Location /ws/>
+        Deny from All
+    </Location>
 </VirtualHost>
+
+SSLCertificateFile "${SRVROOT}/conf/server.crt"
+
+SSLCertificateKeyFile "${SRVROOT}/conf/server.key"
+```
+并对 yobot 源码 /src/client/ybplugins/login.py 进行必要的修改，**请不要用记事本，请不要用记事本，请不要用记事本**
+```/src/client/ybplugins/login.py
+userlogin.last_login_ipaddr = request.headers.get(
+    'X-Forward-For', request.remote_addr)
+```
+```
+user.last_login_ipaddr = request.headers.get(
+    'X-Forward-For', request.remote_addr)
 ```
 
 ### 方法 4 : 使用 caddy 代理 ( 兼顾 ssl 的最简单方式 )
