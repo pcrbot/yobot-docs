@@ -84,7 +84,7 @@ Apache 支持从任何会被加载的 http-xxxx.conf 读取配置，即使配置
 
 在 httpd.conf 内按需启用模块后，在 httpd-ssl.conf 内根据实际情况配置以下内容，**如遇到问题请自行配合 error.log 进行故障排除**
 
-```Apache24 tutorial - httpd-ssl.conf  # by Lancercmd https://github.com/Lancercmd
+```apacheconf
 Listen 443
 
 SSLProtocol all -SSLv3
@@ -114,12 +114,15 @@ SSLCertificateFile "${SRVROOT}/conf/server.crt"
 
 SSLCertificateKeyFile "${SRVROOT}/conf/server.key"
 ```
+
 并对 yobot 源码 /src/client/ybplugins/login.py 进行必要的修改，**请不要用记事本，请不要用记事本，请不要用记事本**
-```/src/client/ybplugins/login.py
+
+```python
 userlogin.last_login_ipaddr = request.headers.get(
     'X-Forwarded-For', request.remote_addr)
 ```
-```
+
+```python
 user.last_login_ipaddr = request.headers.get(
     'X-Forwarded-For', request.remote_addr)
 ```
