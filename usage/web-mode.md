@@ -95,7 +95,7 @@ SSLProxyProtocol all -SSLv3
     ServerAlias io.yobot.xyz
     SSLEngine on
     <IfModule remoteip_module>
-        RemoteIPHeader X-Forward-For
+        RemoteIPHeader X-Forwarded-For
         RemoteIPInternalProxy 127.0.0.1/24
     </IfModule>
     <Location />
@@ -117,11 +117,11 @@ SSLCertificateKeyFile "${SRVROOT}/conf/server.key"
 并对 yobot 源码 /src/client/ybplugins/login.py 进行必要的修改，**请不要用记事本，请不要用记事本，请不要用记事本**
 ```/src/client/ybplugins/login.py
 userlogin.last_login_ipaddr = request.headers.get(
-    'X-Forward-For', request.remote_addr)
+    'X-Forwarded-For', request.remote_addr)
 ```
 ```
 user.last_login_ipaddr = request.headers.get(
-    'X-Forward-For', request.remote_addr)
+    'X-Forwarded-For', request.remote_addr)
 ```
 
 ### 方法 4 : 使用 caddy 代理 ( 兼顾 ssl 的最简单方式 )
