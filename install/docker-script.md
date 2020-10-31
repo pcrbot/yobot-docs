@@ -4,11 +4,13 @@
 
 ## 一键部署
 
-在合适的路径执行
+在合适的路径执行，一键部署 `yobot` 与 `gocqhttp`
 
 ```shell
-curl -fsSL https://get.yobot.win/install.sh -o yobot-installer.sh && sudo bash yobot-installer.sh
+sudo bash -c "$(curl get.yobot.win)"
 ```
+
+如果需要单独使用 `yobot` 镜像，请参考[yobot镜像](./docker.md)
 
 注意：
 

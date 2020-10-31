@@ -5,11 +5,7 @@
 在合适的路径（比如桌面）打开 Windows powershell，执行
 
 ```powershell
-# 允许 Powershell 执行网络脚本
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-
-# 开始自动部署
-Invoke-WebRequest https://get.yobot.win/install.ps1 -OutFile .\install.ps1 ; powershell -File install.ps1
+iex (iwr get.yobot.win).content
 ```
 
 如果安装出现问题也可以使用[手动部署](./Windows-gocqhttp.md)

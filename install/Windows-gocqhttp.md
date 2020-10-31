@@ -6,7 +6,7 @@
 
 ### 部署 yobot
 
-下载[yobot 便携版](https://yobot.lanzous.com/b00nlr3ni)
+下载[yobot 便携版](https://github.com/pcrbot/yobot/releases/latest)
 
 解压后双击“yobot.exe”启动服务
 
@@ -22,8 +22,7 @@
 
 #### 运行 go-cqhttp
 
-[go-cqhttp 64 位](https://github.com/Mrs4s/go-cqhttp/releases/download/v0.9.25/go-cqhttp-v0.9.25-windows-amd64.zip)  
-[go-cqhttp 32 位](https://github.com/Mrs4s/go-cqhttp/releases/download/v0.9.25/go-cqhttp-v0.9.25-windows-386.zip)
+下载[go-cqhttp](https://github.com/Mrs4s/go-cqhttp/releases)，Windows 用户选择 `windows-amd64.zip`  
 
 解压后，双击启动，此时会自动生成一个 `config.json` 文件，打开这个文件修改
 
@@ -61,7 +60,10 @@
       "reverse_url": "ws://localhost:9222/ws/",
       "reverse_reconnect_interval": 3000
     }
-  ]
+  ],
+  "web_ui": {
+    "enabled": false
+  }
 }
 ```
 

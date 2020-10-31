@@ -8,7 +8,12 @@
 
 如果坚持在本地计算机运行，也可以使用内网穿透（不建议新手使用）
 
-### 方法 1：直接连接（最简单）
+### 方法 1：直接连接（简单原始）
+
+直接暴露服务的端口，无法使用加密通信，网址中必须留下端口
+
+<details>
+  <summary>（点击展开）</summary>
 
 在 yobot [配置文件](./configuration.md)中，将`host`字段恢复为`0.0.0.0`（即默认值，如果没有手动修改过就不用管）
 
@@ -28,9 +33,16 @@ e.g. `http://10.10.10.10:9222/yobot/`
 
 :::
 
-### 方法 2：使用 Nginx 代理
+</details>
+
+### 方法 2：使用 Nginx 代理（麻烦但功能强大，目前的主流）
 
 如果需要为网页添加日志记录、HTTPS支持、安全限制等，或者需要同时部署其他站点，可以使用 Nginx、Apache 之类的服务器软件
+
+这里只给出实例，不详细讲解方法
+
+<details>
+  <summary>（点击展开）</summary>
 
 请根据服务器实际情况设定 Nginx 代理，这里给出一个示例，**不要直接复制**，如果不懂请用工具生成或请熟悉的人代劳
 
@@ -76,7 +88,14 @@ server {
 }
 ```
 
-### 方法 3：使用 Apache 代理
+</details>
+
+### 方法 3：使用 Apache 代理（麻烦但功能强大，上个时代的主流）
+
+这里只给出实例，不详细讲解方法
+
+<details>
+  <summary>（点击展开）</summary>
 
 Apache 支持从任何会被加载的 http-xxxx.conf 读取配置，即使配置本不应属于该文件
 
@@ -115,7 +134,7 @@ SSLCertificateFile "${SRVROOT}/conf/server.crt"
 SSLCertificateKeyFile "${SRVROOT}/conf/server.key"
 ```
 
-并对 yobot 源码 /src/client/ybplugins/login.py 进行必要的修改，**请不要用记事本，请不要用记事本，请不要用记事本**
+并对 yobot 源码 /src/client/ybplugins/login.py 进行必要的修改
 
 ```python
 userlogin.last_login_ipaddr = request.headers.get(
@@ -127,35 +146,38 @@ user.last_login_ipaddr = request.headers.get(
     'X-Forwarded-For', request.remote_addr)
 ```
 
-### 方法 4 : 使用 caddy 代理 ( 兼顾 ssl 的最简单方式 )
+</details>
 
-下载安装 `caddy` ，配置好环境变量。
+### 方法 4 : 使用 caddy 代理（非常简单且强大，比 nginx 稍差）
 
-此指令中的 `example.com` 替换成你自己的域名。
+这里只给出实例，不详细讲解方法
+
+<details>
+  <summary>（点击展开）</summary>
+
+下载安装 `caddy`
+
+创建一个 `Caddyfile` （没有扩展名），编写内容如下，其中的 `example.com` 替换成你自己的域名。
 
 ```caddyfile
-io.yobot.xyz {  # 你的域名
+example.com {  # 你的域名
 
   respond /ws/* "Forbidden" 403 {
     close
   }
 
   reverse_proxy / http://127.0.0.1:9222 {
-    header_up X-Real-IP {remote}  # 传递用户IP
+    header_up +X-Real-IP {remote}  # 传递用户IP
   }
 }
 ```
+
+启动 caddy
+
+</details>
 
 ## 开始使用 Web 模式
 
 向机器人私聊发送“登录”即可
 
-如果需要密码，向机器人私聊发送“重置密码”即可\(3.5.6+\)
-
-开启 Web 模式后，可以使用[新版公会战](./web-clanbattle.md)
-
-## 不使用 Web 模式（不推荐）
-
-使用旧版的公会战。
-
-在[配置文件](./configuration.md)中，将 `clan_battle_mode` 字段修改为 `chat`
+如果需要密码，向机器人私聊发送“重置密码”即可
