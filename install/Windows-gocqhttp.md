@@ -18,13 +18,13 @@
 
 由于 Windows 自带的记事本编辑 `config.json` 文件时会出现问题，请先安装编程专用文本编辑器，比如这个：
 
-[下载notepad2](http://www.flos-freeware.ch/zip/Notepad2_4.2.25_x64.exe)
+[下载notepad3](http://pan.yobot.win/share/Windows%E5%B7%A5%E5%85%B7/Notepad3.exe)
 
 #### 运行 go-cqhttp
 
-下载[go-cqhttp](https://github.com/Mrs4s/go-cqhttp/releases)，Windows 用户选择 `windows-amd64.zip`  
+下载[go-cqhttp](https://github.com/Mrs4s/go-cqhttp/releases/latest)，Windows 用户选择 `windows-amd64.zip`  
 
-解压后，双击启动，此时会自动生成一个 `config.json` 文件，打开这个文件修改
+解压后获得 `go-cqhttp.exe`，在其同目录下创建一个 `config.json` 文件，填写如下内容
 
 ```json
 {
@@ -67,7 +67,7 @@
 }
 ```
 
-重新启动 go-cqhttp 并登录
+双击启动 go-cqhttp 并登录
 
 部署完成
 

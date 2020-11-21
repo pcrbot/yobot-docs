@@ -24,10 +24,14 @@ themeConfig:
       items:
         - text: Linux 一键部署
           link: /install/docker-script/
-        - text: Linux 手动部署
-          link: /install/Linux-gocqhttp/
-        - text: Windows 部署
+        - text: Windows 一键部署
           link: /install/Windows-mirai-auto/
+        - text: Linux 部署方法
+          link: /install/Linux-gocqhttp/
+        - text: Windows 部署方法
+          link: /install/Windows-gocqhttp/
+        - text: Docker
+          link: /install/docker/
         - text: pcrbot 社区提供的部署方法
           link: /install/community-installer/
     - text: 使用方法

@@ -5,6 +5,7 @@
 [@yuudi](https://github.com/yuudi)  
 [@winrey](https://github.com/winrey)  
 [@Tan90Qian](https://github.com/Tan90Qian)  
+[@A-kirami](https://github.com/A-kirami)  
 [@Diving-Fish](https://github.com/Diving-Fish)  
 [@Ai-Himmel](https://github.com/Ai-Himmel)  
 [@Windylh](https://github.com/Windylh)  

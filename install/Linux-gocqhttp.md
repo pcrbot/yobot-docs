@@ -1,4 +1,4 @@
-# Linux 使用 cqhttp-mirai 部署
+# Linux 使用 gocqhttp 部署
 
 ::: tip
 
@@ -26,16 +26,6 @@ yum install -y python3 screen wget
 
 请确认 python 版本至少为 3.6，如果 `python3 -V` 显示版本低于 3.6，请安装新版 python
 
-#### （可选）新建一个 linux 用户
-
-> 使用低权限的用户可以减少意外时的损失
-
-```shell
-groupadd qqbot
-useradd -g qqbot -m qqbot
-su - qqbot
-```
-
 #### 使用终端复用器
 
 这里我们用 screen 作为终端复用工具，具体用法请搜索 screen 教程  
@@ -52,8 +42,7 @@ mkdir -p ~/qqbot/yobot
 cd ~/qqbot/yobot
 
 # 下载源码
-git clone https://github.com/pcrbot/yobot.git
-# 国内可改用 https://gitee.com/yobot/yobot.git
+git clone https://github.com/pcrbot/yobot.git -b v3.6.7
 
 cd yobot/src/client/
 
@@ -74,17 +63,15 @@ sh yobotg.sh
 
 #### 下载 go-cqhttp
 
-根据你的系统架构选择执行文件（大部分服务器是 amd64，可以使用 `dpkg --print-architecture` 命令查看）
+根据你的系统架构选择执行文件（大部分服务器是 amd64，可以使用 `uname -m` 命令查看，`x86_64` 即 `amd64`）
 
-amd64: `https://github.com/Mrs4s/go-cqhttp/releases/download/v0.9.25/go-cqhttp-v0.9.25-linux-amd64.tar.gz`  
-arm: `https://github.com/Mrs4s/go-cqhttp/releases/download/v0.9.25/go-cqhttp-v0.9.25-linux-arm.tar.gz`  
-arm64: `https://github.com/Mrs4s/go-cqhttp/releases/download/v0.9.25/go-cqhttp-v0.9.25-linux-amd64.tar.gz`
+[在此查看最新版本](https://github.com/Mrs4s/go-cqhttp/releases/latest)
 
 ```shell
 mkdir -p ~/qqbot/mirai
 cd ~/qqbot/mirai
-wget https://github.com/Mrs4s/go-cqhttp/releases/download/v0.9.25/go-cqhttp-v0.9.25-linux-amd64.tar.gz
-# 国内可改用 https://download.fastgit.org/Mrs4s/go-cqhttp/releases/download/v0.9.25/go-cqhttp-v0.9.25-linux-amd64.tar.gz
+wget https://github.com/Mrs4s/go-cqhttp/releases/download/v0.9.31-fix2/go-cqhttp-v0.9.31-fix2-linux-amd64.tar.gz
+# 国内可改用 https://download.fastgit.org/Mrs4s/go-cqhttp/releases/download/v0.9.31-fix2/go-cqhttp-v0.9.31-fix2-linux-amd64.tar.gz
 tar zxvf go-cqhttp-v0.9.25-linux-amd64.tar.gz
 rm go-cqhttp-v0.9.25-linux-amd64.tar.gz
 ```
@@ -93,19 +80,23 @@ rm go-cqhttp-v0.9.25-linux-amd64.tar.gz
 
 ```shell
 cd ~/qqbot/mirai
+
+# 先执行
+./go-cqhttp
+# 此时会生成一个 config.hjson 文件
+# 修改这个文件
 vim config.json
 ```
 
 修改配置文件如下
 
-```json
-{
-  "uin": 0, "←--------------------注释1": "作为机器人的 QQ 号",
-  "password": "", "←--------------注释2": "作为机器人的 QQ 密码",
+```json{
+  "uin": 123456789,  // 填写作为机器人的 QQ 号
+  "password": "xxxxxxx",  // 填写作为机器人的 QQ 密码
   "encrypt_password": false,
   "password_encrypted": "",
-  "enable_db": false, "←----------注释3": "内置数据库，yobot 不需要，某些其他插件可能需要",
-  "access_token": "", "←----------注释4": "这里也可以填写事先准备好的 access_token",
+  "enable_db": false,
+  "access_token": "",
   "relogin": {
     "enabled": true,
     "relogin_delay": 3,
@@ -120,6 +111,7 @@ vim config.json
   "ignore_invalid_cqcode": false,
   "force_fragmented": true,
   "heartbeat_interval": 5,
+  "use_sso_address": false,
   "http_config": {
     "enabled": false
   },
@@ -132,7 +124,10 @@ vim config.json
       "reverse_url": "ws://localhost:9222/ws/",
       "reverse_reconnect_interval": 3000
     }
-  ]
+  ],
+  "web_ui": {
+    "enabled": false
+  }
 }
 ```
 

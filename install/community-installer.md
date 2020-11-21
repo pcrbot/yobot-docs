@@ -8,6 +8,12 @@
 
 [教程页面](https://blog.di.he.cn/2020/09/22/deploy-a-priconne-bot-on-linux/)
 
+## pcrbot.com 的 docker 部署方案
+
+详细的 docker 部署方案，包含部署 HoshinoBot + yobot，适合偏好 docker 的用户参考。
+
+[教程页面](https://pcrbot.com/depoly-with-docker/)
+
 ## 去角质腕骨的dai小仓唯bot一键部署脚本
 
 完备的 pcrbot 部署脚本，包含部署 HoshinoBot、yobot 以及大量的 pcrbot 社区插件。适合批量部署。

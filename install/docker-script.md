@@ -7,7 +7,7 @@
 在合适的路径执行，一键部署 `yobot` 与 `gocqhttp`
 
 ```shell
-sudo bash -c "$(curl get.yobot.win)"
+sudo bash -c "$(curl -sL get.yobot.win)"
 ```
 
 如果需要单独使用 `yobot` 镜像，请参考[yobot镜像](./docker.md)
