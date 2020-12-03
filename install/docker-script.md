@@ -25,8 +25,8 @@ sudo bash -c "$(curl -sL get.yobot.win)"
 1. 如果没有 docker 则安装 docker
 1. 在当前目录新建 `yobot_data`、 `gocqhttp_data` 存放数据，并填写配置文件
 1. 新建了一个名为 `qqbot` 的 docker 网络
-1. 拉取 `yobot/yobot` 镜像，创建名为 `yobot` 的容器运行 yobot，并监听 9222 端口
-1. 构建了一个 `gocqhttp` 镜像，创建名为 `gocqhttp` 的容器运行 gocqhttp
+1. 拉取 `yobot/yobot:slim` 镜像，创建名为 `yobot` 的容器运行 yobot，并监听 9222 端口
+1. 拉取 `pcrbot/gocqhttp` 镜像，创建名为 `gocqhttp` 的容器运行 gocqhttp
 
 </details>
 

@@ -24,10 +24,10 @@ themeConfig:
       items:
         - text: Linux 一键部署
           link: /install/docker-script/
-        - text: Windows 一键部署
-          link: /install/Windows-mirai-auto/
         - text: Linux 部署方法
           link: /install/Linux-gocqhttp/
+        - text: Windows 一键部署
+          link: /install/Windows-mirai-auto/
         - text: Windows 部署方法
           link: /install/Windows-gocqhttp/
         - text: Docker

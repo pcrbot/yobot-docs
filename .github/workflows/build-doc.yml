@@ -1,5 +1,5 @@
 name: Build and Deploy
-on: [workflow_dispatch]
+on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-18.04
@@ -27,4 +27,5 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          remoteDir: ${{ secrets.FTP_PATH }}
           localDir: ./dist

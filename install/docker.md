@@ -14,8 +14,8 @@ docker run -d \
            --name yobot \
            -p 9222:9222 \  # 暴露 9222 端口，如果希望只监听本地可改为 -p 127.0.0.1:9222:9222
            -v ${PWD}/yobot_data:/yobot/yobot_data \  # 将数据储存在当前路径下 yobot_data 目录
-           -e YOBOT_ACCESS_TOKEN "" \  # access_token，如有需要可填写，默认为空（空即不验证）
-           -e YOBOT_PUBLIC_ADDRESS "" \  # 用户访问的地址，如有需要可填写，默认自动检测，格式为："https://example.com/"
+           -e YOBOT_ACCESS_TOKEN="" \  # access_token，如有需要可填写，默认为空（空即不验证）
+           -e YOBOT_PUBLIC_ADDRESS="" \  # 用户访问的地址，如有需要可填写，默认自动检测，格式为："https://example.com/"
            yobot/yobot:pypy  # pypy 版速度更快但占用内存更多，可改为 yobot/yobot:slim 内存占用更小且体积更小
 ```
 

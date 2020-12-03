@@ -18,10 +18,10 @@
 
 ```shell
 # RHEL / CentOS:
-yum install -y python3 screen wget
+yum install -y gcc python3 screen wget
 
 # Debain / Ubuntu
-# apt-get install -y python3 screen wget
+# apt-get install -y gcc python3 screen wget
 ```
 
 请确认 python 版本至少为 3.6，如果 `python3 -V` 显示版本低于 3.6，请安装新版 python
@@ -70,10 +70,9 @@ sh yobotg.sh
 ```shell
 mkdir -p ~/qqbot/mirai
 cd ~/qqbot/mirai
-wget https://github.com/Mrs4s/go-cqhttp/releases/download/v0.9.31-fix2/go-cqhttp-v0.9.31-fix2-linux-amd64.tar.gz
-# 国内可改用 https://download.fastgit.org/Mrs4s/go-cqhttp/releases/download/v0.9.31-fix2/go-cqhttp-v0.9.31-fix2-linux-amd64.tar.gz
-tar zxvf go-cqhttp-v0.9.25-linux-amd64.tar.gz
-rm go-cqhttp-v0.9.25-linux-amd64.tar.gz
+wget https://down.yobot.club/yobot/go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
+tar zxvf go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
+rm go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
 ```
 
 #### 修改 go-cqhttp 配置文件

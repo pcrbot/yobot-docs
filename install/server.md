@@ -28,7 +28,7 @@
 
 一些口碑比较好的：
 
-[腾讯云香港轻量](https://buy.cloud.tencent.com/lighthouse)、
+[腾讯云新加坡轻量](https://buy.cloud.tencent.com/lighthouse)、
 [阿里云香港轻量](https://common-buy.aliyun.com/?commodityCode=swas&regionId=cn-hongkong#/buy)、
 [vultr](https://vultr.com/)、
 [linode](https://www.linode.com)、
