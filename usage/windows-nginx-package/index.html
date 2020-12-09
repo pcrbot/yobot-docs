@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Windows-Nginx 预配置包使用说明（测试） | yobot</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo/logo.ico">
+    <link rel="apple-touch-icon" href="/logo/logo.ico">
+    <meta name="description" content="公主链接群聊机器人">
+    
+    <link rel="preload" href="/assets/css/0.styles.6e946064.css" as="style"><link rel="preload" href="/assets/js/app.1c894f84.js" as="script"><link rel="preload" href="/assets/js/2.8e47466b.js" as="script"><link rel="preload" href="/assets/js/38.070bdf0c.js" as="script"><link rel="prefetch" href="/assets/js/10.2cb4e51d.js"><link rel="prefetch" href="/assets/js/11.ab68f8f4.js"><link rel="prefetch" href="/assets/js/12.6331cac6.js"><link rel="prefetch" href="/assets/js/13.1f0730f0.js"><link rel="prefetch" href="/assets/js/14.2e22363d.js"><link rel="prefetch" href="/assets/js/15.ca923b4a.js"><link rel="prefetch" href="/assets/js/16.dc74b846.js"><link rel="prefetch" href="/assets/js/17.54fb1d09.js"><link rel="prefetch" href="/assets/js/18.6bbf6070.js"><link rel="prefetch" href="/assets/js/19.b09e4f66.js"><link rel="prefetch" href="/assets/js/20.07023b48.js"><link rel="prefetch" href="/assets/js/21.33ae0dd9.js"><link rel="prefetch" href="/assets/js/22.f7cc444b.js"><link rel="prefetch" href="/assets/js/23.d220d064.js"><link rel="prefetch" href="/assets/js/24.e2eb5e88.js"><link rel="prefetch" href="/assets/js/25.587fdd6b.js"><link rel="prefetch" href="/assets/js/26.17004ca9.js"><link rel="prefetch" href="/assets/js/27.b5f45828.js"><link rel="prefetch" href="/assets/js/28.babdcc06.js"><link rel="prefetch" href="/assets/js/29.f580c5ee.js"><link rel="prefetch" href="/assets/js/3.f6b31109.js"><link rel="prefetch" href="/assets/js/30.04643631.js"><link rel="prefetch" href="/assets/js/31.4cab1846.js"><link rel="prefetch" href="/assets/js/32.ab3e5581.js"><link rel="prefetch" href="/assets/js/33.38dc93c5.js"><link rel="prefetch" href="/assets/js/34.f300d9ee.js"><link rel="prefetch" href="/assets/js/35.75fd93c3.js"><link rel="prefetch" href="/assets/js/36.00ba066f.js"><link rel="prefetch" href="/assets/js/37.7bd9518f.js"><link rel="prefetch" href="/assets/js/4.cd140570.js"><link rel="prefetch" href="/assets/js/5.ca131c87.js"><link rel="prefetch" href="/assets/js/6.a496d516.js"><link rel="prefetch" href="/assets/js/7.b3492c57.js"><link rel="prefetch" href="/assets/js/8.a71cba55.js"><link rel="prefetch" href="/assets/js/9.5d70bf89.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6e946064.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo/logo.png" alt="yobot" class="logo"> <span class="site-name can-hide">yobot</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安装方法" class="dropdown-title"><span class="title">安装方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="安装方法" class="mobile-dropdown-title"><span class="title">安装方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/install/docker-script/" class="nav-link">
+  Linux 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Linux-gocqhttp/" class="nav-link">
+  Linux 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-mirai-auto/" class="nav-link">
+  Windows 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-gocqhttp/" class="nav-link">
+  Windows 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/install/community-installer/" class="nav-link">
+  pcrbot 社区提供的部署方法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="使用方法" class="dropdown-title"><span class="title">使用方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="使用方法" class="mobile-dropdown-title"><span class="title">使用方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/features/" class="nav-link">
+  功能表
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-mode/" class="nav-link">
+  开启 Web 模式
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-clanbattle/" class="nav-link">
+  Web 模式公会战
+</a></li><li class="dropdown-item"><!----> <a href="/usage/manual/" class="nav-link">
+  公会战手册
+</a></li><li class="dropdown-item"><!----> <a href="/usage/security/" class="nav-link">
+  安全性
+</a></li></ul></div></div><div class="nav-item"><a href="/usage/faq/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/usage/cannot-open-webpage/" class="nav-link">
+  链接无法打开
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/project/open-source/" class="nav-link">
+  开源软件许可
+</a></li><li class="dropdown-item"><!----> <a href="/project/changelog/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-item"><!----> <a href="/project/contributors/" class="nav-link">
+  项目贡献者
+</a></li></ul></div></div> <a href="https://github.com/pcrbot/yobot-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安装方法" class="dropdown-title"><span class="title">安装方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="安装方法" class="mobile-dropdown-title"><span class="title">安装方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/install/docker-script/" class="nav-link">
+  Linux 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Linux-gocqhttp/" class="nav-link">
+  Linux 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-mirai-auto/" class="nav-link">
+  Windows 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-gocqhttp/" class="nav-link">
+  Windows 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/install/community-installer/" class="nav-link">
+  pcrbot 社区提供的部署方法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="使用方法" class="dropdown-title"><span class="title">使用方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="使用方法" class="mobile-dropdown-title"><span class="title">使用方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/features/" class="nav-link">
+  功能表
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-mode/" class="nav-link">
+  开启 Web 模式
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-clanbattle/" class="nav-link">
+  Web 模式公会战
+</a></li><li class="dropdown-item"><!----> <a href="/usage/manual/" class="nav-link">
+  公会战手册
+</a></li><li class="dropdown-item"><!----> <a href="/usage/security/" class="nav-link">
+  安全性
+</a></li></ul></div></div><div class="nav-item"><a href="/usage/faq/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/usage/cannot-open-webpage/" class="nav-link">
+  链接无法打开
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/project/open-source/" class="nav-link">
+  开源软件许可
+</a></li><li class="dropdown-item"><!----> <a href="/project/changelog/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-item"><!----> <a href="/project/contributors/" class="nav-link">
+  项目贡献者
+</a></li></ul></div></div> <a href="https://github.com/pcrbot/yobot-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="windows-nginx-预配置包使用说明-测试"><a href="#windows-nginx-预配置包使用说明-测试" class="header-anchor">#</a> Windows-Nginx 预配置包使用说明（测试）</h1> <h2 id="使用方法"><a href="#使用方法" class="header-anchor">#</a> 使用方法</h2> <ol><li>在<strong>你的服务器上</strong>下载<a href="https://yobot.lanzous.com/id7c0da" target="_blank" rel="noopener noreferrer">yobot Nginx 预配置包<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，解压。</li> <li>双击 <code>启动.bat</code>，有一个窗口<strong>一闪而过</strong>，这是正常的。</li> <li>在你自己的电脑上打开浏览器，输入你的服务器 ip 地址，如果看到 <code>Welcome to nginx!</code> 则说明启动成功。</li> <li>向你的机器人发送<code>登录</code>，获得地址后，删除地址中的 <code>:9222</code> （包括冒号），复制到浏览器进入后台。</li> <li>进入后台的设置页面，在 <code>此站点的公开地址</code> 一栏中，删除地址中的 <code>:9222</code> （包括冒号），然后保存并重启即可。</li></ol> <h2 id="说明"><a href="#说明" class="header-anchor">#</a> 说明</h2> <p>此方法是利用 nginx 反向代理将 yobot 的 9222 端口转发至标准 http 的 80 端口。</p> <p>如果使用的是国内服务器，那么 80 端口不能使用<strong>未备案</strong>的域名。</p> <p>除了 <code>启动.bat</code>，预配置包中还放了一些常用的快捷指令：<br> <code>停止.bat</code> 用于停止 nignx<br> <code>强制停止.bat</code> 用于强制停止 nignx<br> <code>重载配置.bat</code> 用于修改配置文件后重新加载</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/pcrbot/yobot-docs/edit/master/usage/windows-nginx-package.md" target="_blank" rel="noopener noreferrer">编辑此页面</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1c894f84.js" defer></script><script src="/assets/js/2.8e47466b.js" defer></script><script src="/assets/js/38.070bdf0c.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux 使用 gocqhttp 部署 | yobot</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo/logo.ico">
+    <link rel="apple-touch-icon" href="/logo/logo.ico">
+    <meta name="description" content="公主链接群聊机器人">
+    
+    <link rel="preload" href="/assets/css/0.styles.6e946064.css" as="style"><link rel="preload" href="/assets/js/app.1c894f84.js" as="script"><link rel="preload" href="/assets/js/2.8e47466b.js" as="script"><link rel="preload" href="/assets/js/13.1f0730f0.js" as="script"><link rel="prefetch" href="/assets/js/10.2cb4e51d.js"><link rel="prefetch" href="/assets/js/11.ab68f8f4.js"><link rel="prefetch" href="/assets/js/12.6331cac6.js"><link rel="prefetch" href="/assets/js/14.2e22363d.js"><link rel="prefetch" href="/assets/js/15.ca923b4a.js"><link rel="prefetch" href="/assets/js/16.dc74b846.js"><link rel="prefetch" href="/assets/js/17.54fb1d09.js"><link rel="prefetch" href="/assets/js/18.6bbf6070.js"><link rel="prefetch" href="/assets/js/19.b09e4f66.js"><link rel="prefetch" href="/assets/js/20.07023b48.js"><link rel="prefetch" href="/assets/js/21.33ae0dd9.js"><link rel="prefetch" href="/assets/js/22.f7cc444b.js"><link rel="prefetch" href="/assets/js/23.d220d064.js"><link rel="prefetch" href="/assets/js/24.e2eb5e88.js"><link rel="prefetch" href="/assets/js/25.587fdd6b.js"><link rel="prefetch" href="/assets/js/26.17004ca9.js"><link rel="prefetch" href="/assets/js/27.b5f45828.js"><link rel="prefetch" href="/assets/js/28.babdcc06.js"><link rel="prefetch" href="/assets/js/29.f580c5ee.js"><link rel="prefetch" href="/assets/js/3.f6b31109.js"><link rel="prefetch" href="/assets/js/30.04643631.js"><link rel="prefetch" href="/assets/js/31.4cab1846.js"><link rel="prefetch" href="/assets/js/32.ab3e5581.js"><link rel="prefetch" href="/assets/js/33.38dc93c5.js"><link rel="prefetch" href="/assets/js/34.f300d9ee.js"><link rel="prefetch" href="/assets/js/35.75fd93c3.js"><link rel="prefetch" href="/assets/js/36.00ba066f.js"><link rel="prefetch" href="/assets/js/37.7bd9518f.js"><link rel="prefetch" href="/assets/js/38.070bdf0c.js"><link rel="prefetch" href="/assets/js/4.cd140570.js"><link rel="prefetch" href="/assets/js/5.ca131c87.js"><link rel="prefetch" href="/assets/js/6.a496d516.js"><link rel="prefetch" href="/assets/js/7.b3492c57.js"><link rel="prefetch" href="/assets/js/8.a71cba55.js"><link rel="prefetch" href="/assets/js/9.5d70bf89.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6e946064.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo/logo.png" alt="yobot" class="logo"> <span class="site-name can-hide">yobot</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安装方法" class="dropdown-title"><span class="title">安装方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="安装方法" class="mobile-dropdown-title"><span class="title">安装方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/install/docker-script/" class="nav-link">
+  Linux 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Linux-gocqhttp/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Linux 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-mirai-auto/" class="nav-link">
+  Windows 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-gocqhttp/" class="nav-link">
+  Windows 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/install/community-installer/" class="nav-link">
+  pcrbot 社区提供的部署方法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="使用方法" class="dropdown-title"><span class="title">使用方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="使用方法" class="mobile-dropdown-title"><span class="title">使用方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/features/" class="nav-link">
+  功能表
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-mode/" class="nav-link">
+  开启 Web 模式
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-clanbattle/" class="nav-link">
+  Web 模式公会战
+</a></li><li class="dropdown-item"><!----> <a href="/usage/manual/" class="nav-link">
+  公会战手册
+</a></li><li class="dropdown-item"><!----> <a href="/usage/security/" class="nav-link">
+  安全性
+</a></li></ul></div></div><div class="nav-item"><a href="/usage/faq/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/usage/cannot-open-webpage/" class="nav-link">
+  链接无法打开
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/project/open-source/" class="nav-link">
+  开源软件许可
+</a></li><li class="dropdown-item"><!----> <a href="/project/changelog/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-item"><!----> <a href="/project/contributors/" class="nav-link">
+  项目贡献者
+</a></li></ul></div></div> <a href="https://github.com/pcrbot/yobot-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安装方法" class="dropdown-title"><span class="title">安装方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="安装方法" class="mobile-dropdown-title"><span class="title">安装方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/install/docker-script/" class="nav-link">
+  Linux 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Linux-gocqhttp/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Linux 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-mirai-auto/" class="nav-link">
+  Windows 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-gocqhttp/" class="nav-link">
+  Windows 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/install/community-installer/" class="nav-link">
+  pcrbot 社区提供的部署方法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="使用方法" class="dropdown-title"><span class="title">使用方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="使用方法" class="mobile-dropdown-title"><span class="title">使用方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/features/" class="nav-link">
+  功能表
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-mode/" class="nav-link">
+  开启 Web 模式
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-clanbattle/" class="nav-link">
+  Web 模式公会战
+</a></li><li class="dropdown-item"><!----> <a href="/usage/manual/" class="nav-link">
+  公会战手册
+</a></li><li class="dropdown-item"><!----> <a href="/usage/security/" class="nav-link">
+  安全性
+</a></li></ul></div></div><div class="nav-item"><a href="/usage/faq/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/usage/cannot-open-webpage/" class="nav-link">
+  链接无法打开
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/project/open-source/" class="nav-link">
+  开源软件许可
+</a></li><li class="dropdown-item"><!----> <a href="/project/changelog/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-item"><!----> <a href="/project/contributors/" class="nav-link">
+  项目贡献者
+</a></li></ul></div></div> <a href="https://github.com/pcrbot/yobot-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux-使用-gocqhttp-部署"><a href="#linux-使用-gocqhttp-部署" class="header-anchor">#</a> Linux 使用 gocqhttp 部署</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>阅读此章节前，您需要了解：</p> <ul><li>Linux 基本用法</li> <li>screen（或 tmux）</li> <li>git</li></ul></div> <h2 id="部署过程"><a href="#部署过程" class="header-anchor">#</a> 部署过程</h2> <h3 id="环境准备"><a href="#环境准备" class="header-anchor">#</a> 环境准备</h3> <h4 id="安装依赖"><a href="#安装依赖" class="header-anchor">#</a> 安装依赖</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># RHEL / CentOS:</span>
+yum <span class="token function">install</span> -y gcc python3 <span class="token function">screen</span> <span class="token function">wget</span>
+
+<span class="token comment"># Debain / Ubuntu</span>
+<span class="token comment"># apt-get install -y gcc python3 screen wget</span>
+</code></pre></div><p>请确认 python 版本至少为 3.6，如果 <code>python3 -V</code> 显示版本低于 3.6，请安装新版 python</p> <h4 id="使用终端复用器"><a href="#使用终端复用器" class="header-anchor">#</a> 使用终端复用器</h4> <p>这里我们用 screen 作为终端复用工具，具体用法请搜索 screen 教程<br>
+现在新建一个 screen 终端</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">screen</span> -S qqbot
+</code></pre></div><h3 id="部署-yobot"><a href="#部署-yobot" class="header-anchor">#</a> 部署 yobot</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> -p ~/qqbot/yobot
+<span class="token builtin class-name">cd</span> ~/qqbot/yobot
+
+<span class="token comment"># 下载源码</span>
+<span class="token function">git</span> clone https://github.com/pcrbot/yobot.git -b v3.6.7
+
+<span class="token builtin class-name">cd</span> yobot/src/client/
+
+<span class="token comment"># 安装依赖</span>
+pip3 <span class="token function">install</span> -r requirements.txt --user
+<span class="token comment"># 国内可加上参数 -i https://pypi.tuna.tsinghua.edu.cn/simple</span>
+
+<span class="token comment"># 生成 yobotg</span>
+python3 main.py
+
+<span class="token comment"># 启用 yobot</span>
+<span class="token function">sh</span> yobotg.sh
+</code></pre></div><p>按下 <code>ctrl-a , c</code> 连续组合键，新建一个 screen shell</p> <h3 id="部署-mirai"><a href="#部署-mirai" class="header-anchor">#</a> 部署 mirai</h3> <h4 id="下载-go-cqhttp"><a href="#下载-go-cqhttp" class="header-anchor">#</a> 下载 go-cqhttp</h4> <p>根据你的系统架构选择执行文件（大部分服务器是 amd64，可以使用 <code>uname -m</code> 命令查看，<code>x86_64</code> 即 <code>amd64</code>）</p> <p><a href="https://github.com/Mrs4s/go-cqhttp/releases/latest" target="_blank" rel="noopener noreferrer">在此查看最新版本<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> -p ~/qqbot/mirai
+<span class="token builtin class-name">cd</span> ~/qqbot/mirai
+<span class="token function">wget</span> https://down.yobot.club/yobot/go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
+<span class="token function">tar</span> zxvf go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
+<span class="token function">rm</span> go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
+</code></pre></div><h4 id="修改-go-cqhttp-配置文件"><a href="#修改-go-cqhttp-配置文件" class="header-anchor">#</a> 修改 go-cqhttp 配置文件</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> ~/qqbot/mirai
+
+<span class="token comment"># 先执行</span>
+./go-cqhttp
+<span class="token comment"># 此时会生成一个 config.hjson 文件</span>
+<span class="token comment"># 修改这个文件</span>
+<span class="token function">vim</span> config.json
+</code></pre></div><p>修改配置文件如下</p> <div class="language-json{ extra-class"><pre class="language-text"><code>  &quot;uin&quot;: 123456789,  // 填写作为机器人的 QQ 号
+  &quot;password&quot;: &quot;xxxxxxx&quot;,  // 填写作为机器人的 QQ 密码
+  &quot;encrypt_password&quot;: false,
+  &quot;password_encrypted&quot;: &quot;&quot;,
+  &quot;enable_db&quot;: false,
+  &quot;access_token&quot;: &quot;&quot;,
+  &quot;relogin&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;relogin_delay&quot;: 3,
+    &quot;max_relogin_times&quot;: 0
+  },
+  &quot;_rate_limit&quot;: {
+    &quot;enabled&quot;: false,
+    &quot;frequency&quot;: 1,
+    &quot;bucket_size&quot;: 1
+  },
+  &quot;post_message_format&quot;: &quot;string&quot;,
+  &quot;ignore_invalid_cqcode&quot;: false,
+  &quot;force_fragmented&quot;: true,
+  &quot;heartbeat_interval&quot;: 5,
+  &quot;use_sso_address&quot;: false,
+  &quot;http_config&quot;: {
+    &quot;enabled&quot;: false
+  },
+  &quot;ws_config&quot;: {
+    &quot;enabled&quot;: false
+  },
+  &quot;ws_reverse_servers&quot;: [
+    {
+      &quot;enabled&quot;: true,
+      &quot;reverse_url&quot;: &quot;ws://localhost:9222/ws/&quot;,
+      &quot;reverse_reconnect_interval&quot;: 3000
+    }
+  ],
+  &quot;web_ui&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre></div><h4 id="启动-go-cqhttp-并登录-qq"><a href="#启动-go-cqhttp-并登录-qq" class="header-anchor">#</a> 启动 go-cqhttp 并登录 QQ</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> ~/qqbot/mirai
+<span class="token function">chmod</span> +x go-cqhttp
+./go-cqhttp
+</code></pre></div><p>部署完成，现在可以按下 <code>ctrl-a , d</code> 连续组合键挂起这两个 shell</p> <h2 id="验证安装"><a href="#验证安装" class="header-anchor">#</a> 验证安装</h2> <p>向机器人发送“version”，机器人会回复当前版本</p> <h2 id="常见问题"><a href="#常见问题" class="header-anchor">#</a> 常见问题</h2> <p>见<a href="/usage/faq.html">FAQ</a></p> <p>如果需要多开，请参考<a href="/usage/mirai-multi-instances.html">mirai多开方法</a></p> <h2 id="开启-web-访问"><a href="#开启-web-访问" class="header-anchor">#</a> 开启 web 访问</h2> <p><a href="/usage/web-mode.html">开启方法</a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/pcrbot/yobot-docs/edit/master/install/Linux-gocqhttp.md" target="_blank" rel="noopener noreferrer">编辑此页面</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1c894f84.js" defer></script><script src="/assets/js/2.8e47466b.js" defer></script><script src="/assets/js/13.1f0730f0.js" defer></script>
+  </body>
+</html>
