@@ -12,6 +12,7 @@
 [@myisjt](https://github.com/myisjt)  
 [@otz](https://github.com/otz)  
 [@Lancercmd](https://github.com/Lancercmd)  
+[@SonodaHanami](https://github.com/SonodaHanami)  
 [@xhl6666](https://github.com/xhl6666)  
 [@ice-b-114](https://github.com/ice-b-114)  
 

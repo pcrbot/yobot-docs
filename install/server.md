@@ -59,8 +59,10 @@
 
 ### 储存空间
 
-Office 开发者订阅 5T 储存空间（[教程](https://zhuanlan.zhihu.com/p/105438817)）
+[七牛云](https://www.qiniu.com/)（有免费额度，国内线路，需要备案）  
+Office 开发者订阅免费 5T 储存空间（[教程](https://zhuanlan.zhihu.com/p/105438817)）
 
 ### CDN
 
-[Cloudflare](https://cloudflare.com)（美国线路，国内机器请勿使用）
+[百度云加速](https://su.baidu.com/)（免费，国内线路，需要备案）  
+[Cloudflare](https://cloudflare.com)（免费，美国线路，国内机器请勿使用）
