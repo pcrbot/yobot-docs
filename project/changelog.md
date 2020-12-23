@@ -1,5 +1,10 @@
 # 更新日志
 
+## 3.6.8
+
+- 适配公会战五阶段
+- 前端问题修复（[#201](https://github.com/pcrbot/yobot/pull/201)）
+
 ## 3.6.7
 
 - 修复 docker 部署
