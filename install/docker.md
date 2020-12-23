@@ -12,12 +12,23 @@
 ```shell
 docker run -d \
            --name yobot \
-           -p 9222:9222 \  # 暴露 9222 端口，如果希望只监听本地可改为 -p 127.0.0.1:9222:9222
-           -v ${PWD}/yobot_data:/yobot/yobot_data \  # 将数据储存在当前路径下 yobot_data 目录
-           -e YOBOT_ACCESS_TOKEN="" \  # access_token，如有需要可填写，默认为空（空即不验证）
-           -e YOBOT_PUBLIC_ADDRESS="" \  # 用户访问的地址，如有需要可填写，默认自动检测，格式为："https://example.com/"
-           yobot/yobot:pypy  # pypy 版速度更快但占用内存更多，可改为 yobot/yobot:slim 内存占用更小且体积更小
+           -p 9222:9222 \
+           -v ${PWD}/yobot_data:/yobot/yobot_data \
+           -e YOBOT_ACCESS_TOKEN="" \
+           -e YOBOT_PUBLIC_ADDRESS="" \
+           yobot/yobot:pypy
 ```
+
+<details>
+  <summary>参数说明（点击展开）</summary>
+
+`-p 9222:9222` 暴露 9222 端口，如果希望只监听本地可改为 -p 127.0.0.1:9222:9222  
+`-v ${PWD}/yobot_data:/yobot/yobot_data` 将数据储存在当前路径下 yobot_data 目录  
+`-e YOBOT_ACCESS_TOKEN=""` access_token，如有需要可填写，默认为空（空即不验证）  
+`-e YOBOT_PUBLIC_ADDRESS=""` 用户访问的地址，如有需要可填写，默认自动检测，格式为：`"https://example.com/"`  
+`yobot/yobot:pypy` pypy 版速度更快但占用内存更多，可改为 `yobot/yobot:slim` 内存占用更小且体积更小  
+
+</details>
 
 修改 `gocqhttp` 配置文件，在 `ws_reverse_servers` 里面添加如下内容
 
@@ -37,4 +48,23 @@ docker run -d \
         }
     ]
 }
+```
+
+## 更新方法
+
+如果创建容器时正确挂载了数据文件，那么就可以直接删除容器，创建新容器并挂载数据
+
+```shell
+docker stop yobot
+docker rm yobot
+docker rmi yobot/yobot:pypy
+
+docker pull yobot/yobot:pypy
+docker run -d \
+           --name yobot \
+           -p 9222:9222 \
+           -v ${PWD}/yobot_data:/yobot/yobot_data \
+           -e YOBOT_ACCESS_TOKEN="" \
+           -e YOBOT_PUBLIC_ADDRESS="" \
+           yobot/yobot:pypy
 ```
