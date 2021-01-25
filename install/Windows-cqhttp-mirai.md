@@ -18,7 +18,7 @@
 
 解压后双击“yobot.exe”启动服务
 
-![windows下正确启动图](https://img.yobot.win/yobot/aaf38d1a5cbc1c87.jpg)
+![windows下正确启动图](/imgs/aaf38d1a5cbc1c87.jpg)
 
 ### 部署 mirai
 

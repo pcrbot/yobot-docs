@@ -33,21 +33,21 @@ yobot 提供了群聊、web 页面两套用户交互方式，具有操作便捷�
 
 新版助手提供了一个网页面板，面板上可以进行更多操作
 
-![主面板](https://img.yobot.win/yobot/poYvQO.jpg)
+![主面板](/imgs/poYvQO.jpg)
 
-![数据面板](https://img.yobot.win/yobot/HOh17P.jpg)
+![数据面板](/imgs/HOh17P.jpg)
 
 ### 新闻推送
 
 机器人主动发送游戏新闻与活动提醒
 
-![游戏活动提醒](https://img.yobot.win/yobot/5bd8d1f5ac68ffde.jpg)
+![游戏活动提醒](/imgs/5bd8d1f5ac68ffde.jpg)
 
 ### 日程查询
 
 机器人主动发送游戏新闻与活动提醒
 
-![游戏活动提醒](https://img.yobot.win/yobot/J04GEB.jpg)
+![游戏活动提醒](/imgs/J04GEB.jpg)
 
 ### 更多功能
 

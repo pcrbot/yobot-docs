@@ -22,6 +22,8 @@ themeConfig:
       link: /
     - text: 安装方法
       items:
+        - text: 从插件版迁移
+          link: /install/transfer-from-plugin/
         - text: Linux 一键部署
           link: /install/docker-script/
         - text: Linux 部署方法
