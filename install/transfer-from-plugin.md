@@ -14,8 +14,6 @@
           --name yobot \
           -p 9222:9222 \
           -v ${PWD}/yobot_data:/yobot/yobot_data \
-          -e YOBOT_ACCESS_TOKEN="" \
-          -e YOBOT_PUBLIC_ADDRESS="" \
           yobot/yobot:pypy
    ```
 
@@ -41,7 +39,7 @@
 
 1. （对于 onebot-kotlin）在 onebot-kotlin 配置文件 `config/OneBot/settings.yml` 里，找到 `ws_reverse` 字段，添加如下内容
 
-   ```yaml
+   ```yaml {7-13}
    # ...
    # 已有项
    ws_reverse:
