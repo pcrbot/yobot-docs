@@ -50,7 +50,6 @@ cd yobot/src/client/
 # 安装依赖
 pip3 install -r requirements.txt --user
 # 国内可加上参数 -i https://pypi.tuna.tsinghua.edu.cn/simple
-# python3.6 需要使用 requirements-py36.txt
 
 # 生成 yobotg
 python3 main.py
