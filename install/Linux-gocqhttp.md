@@ -24,7 +24,7 @@ yum install -y gcc python3 screen wget
 # apt-get install -y gcc python3 screen wget
 ```
 
-请确认 python 版本至少为 3.6，如果 `python3 -V` 显示版本低于 3.6，请安装新版 python
+请使用 `python3 -V` 命令确认 python 版本，yobot 支持的 python 版本为 3.6 ~ 3.8
 
 #### 使用终端复用器
 

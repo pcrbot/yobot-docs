@@ -6,6 +6,7 @@
 [@winrey](https://github.com/winrey)  
 [@Tan90Qian](https://github.com/Tan90Qian)  
 [@A-kirami](https://github.com/A-kirami)  
+[@Watanabe-Asa](https://github.com/Watanabe-Asa)  
 [@Diving-Fish](https://github.com/Diving-Fish)  
 [@Ai-Himmel](https://github.com/Ai-Himmel)  
 [@Windylh](https://github.com/Windylh)  
@@ -15,6 +16,9 @@
 [@SonodaHanami](https://github.com/SonodaHanami)  
 [@xhl6666](https://github.com/xhl6666)  
 [@ice-b-114](https://github.com/ice-b-114)  
+[linepro6](https://github.com/linepro6)
+[Librazy](https://github.com/Librazy)
+[@ishkong](https://github.com/ishkong)  
 
 ## Platform Support
 
