@@ -162,7 +162,7 @@ example.com {  # 你的域名
     close
   }
 
-  reverse_proxy / http://127.0.0.1:9222 {
+  reverse_proxy * http://127.0.0.1:9222 {
     header_up +X-Real-IP {remote_host}  # 传递用户IP
   }
 }
