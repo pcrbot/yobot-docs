@@ -24,7 +24,7 @@ yum install -y gcc python3 screen wget
 # apt-get install -y gcc python3 screen wget
 ```
 
-请使用 `python3 -V` 命令确认 python 版本，yobot 支持的 python 版本为 3.6 ~ 3.8
+请使用 `python3 -V` 命令确认 python 版本，**yobot 支持的 python 版本为 3.6 ~ 3.8**
 
 #### 使用终端复用器
 
@@ -41,8 +41,8 @@ screen -S qqbot
 mkdir -p ~/qqbot/yobot
 cd ~/qqbot/yobot
 
-# 下载源码
-git clone https://github.com/pcrbot/yobot.git -b v3.6.7
+# 下载源码，使用 stable 稳定版分支
+git clone https://github.com/pcrbot/yobot.git -b stable
 
 cd yobot/src/client/
 
