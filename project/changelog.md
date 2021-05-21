@@ -1,5 +1,12 @@
 # 更新日志
 
+## 3.6.12
+
+- 支持手动配置公会战阶段数与周目数之间的对应关系（[#205](https://github.com/pcrbot/yobot/pull/205)）
+- 优化新闻通知排版（[#231](https://github.com/pcrbot/yobot/pull/231)）
+- 增加挂树时间显示（[#233](https://github.com/pcrbot/yobot/pull/233)）
+- 改善部分操作的权限问题（[#236](https://github.com/pcrbot/yobot/pull/236)）
+
 ## 3.6.11
 
 - 统计：均值偏差支持多阶段（[#217](https://github.com/pcrbot/yobot/pull/217)）
