@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Windows 使用 yobot 源码版 部署 | yobot</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo/logo.ico">
+    <link rel="apple-touch-icon" href="/logo/logo.ico">
+    <meta name="description" content="公主链接群聊机器人">
+    
+    <link rel="preload" href="/assets/css/0.styles.c4d68e36.css" as="style"><link rel="preload" href="/assets/js/app.c5ff52d8.js" as="script"><link rel="preload" href="/assets/js/2.bf67b911.js" as="script"><link rel="preload" href="/assets/js/18.f78fc116.js" as="script"><link rel="prefetch" href="/assets/js/10.bac0cb1d.js"><link rel="prefetch" href="/assets/js/11.5667ca32.js"><link rel="prefetch" href="/assets/js/12.4fe7d54d.js"><link rel="prefetch" href="/assets/js/13.f3be9c1c.js"><link rel="prefetch" href="/assets/js/14.66664fab.js"><link rel="prefetch" href="/assets/js/15.233a85c1.js"><link rel="prefetch" href="/assets/js/16.b75c5268.js"><link rel="prefetch" href="/assets/js/17.dcec5f67.js"><link rel="prefetch" href="/assets/js/19.e2fb895b.js"><link rel="prefetch" href="/assets/js/20.93affaf2.js"><link rel="prefetch" href="/assets/js/21.8eee402c.js"><link rel="prefetch" href="/assets/js/22.8d7cc409.js"><link rel="prefetch" href="/assets/js/23.33eeaded.js"><link rel="prefetch" href="/assets/js/24.8214fabb.js"><link rel="prefetch" href="/assets/js/25.28138ad8.js"><link rel="prefetch" href="/assets/js/26.c0e81c51.js"><link rel="prefetch" href="/assets/js/27.0e596516.js"><link rel="prefetch" href="/assets/js/28.e95bb626.js"><link rel="prefetch" href="/assets/js/29.2dad1747.js"><link rel="prefetch" href="/assets/js/3.4b05a306.js"><link rel="prefetch" href="/assets/js/30.7cb9e8c6.js"><link rel="prefetch" href="/assets/js/31.fbbfc932.js"><link rel="prefetch" href="/assets/js/32.98294076.js"><link rel="prefetch" href="/assets/js/33.8fbbe77e.js"><link rel="prefetch" href="/assets/js/34.fc4f546b.js"><link rel="prefetch" href="/assets/js/35.45fe09ef.js"><link rel="prefetch" href="/assets/js/36.e1e44a52.js"><link rel="prefetch" href="/assets/js/37.3d95cc06.js"><link rel="prefetch" href="/assets/js/38.73ef467e.js"><link rel="prefetch" href="/assets/js/39.d4b04a78.js"><link rel="prefetch" href="/assets/js/4.1782420f.js"><link rel="prefetch" href="/assets/js/40.4ca49932.js"><link rel="prefetch" href="/assets/js/5.28845bd7.js"><link rel="prefetch" href="/assets/js/6.5162b59e.js"><link rel="prefetch" href="/assets/js/7.172fa7c4.js"><link rel="prefetch" href="/assets/js/8.0b685d9b.js"><link rel="prefetch" href="/assets/js/9.f7f603f3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c4d68e36.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo/logo.png" alt="yobot" class="logo"> <span class="site-name can-hide">yobot</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安装方法" class="dropdown-title"><span class="title">安装方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="安装方法" class="mobile-dropdown-title"><span class="title">安装方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/install/transfer-from-plugin/" class="nav-link">
+  从插件版迁移
+</a></li><li class="dropdown-item"><!----> <a href="/install/docker-script/" class="nav-link">
+  Linux 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Linux-gocqhttp/" class="nav-link">
+  Linux 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-mirai-auto/" class="nav-link">
+  Windows 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-gocqhttp/" class="nav-link">
+  Windows 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/install/community-installer/" class="nav-link">
+  pcrbot 社区提供的部署方法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="使用方法" class="dropdown-title"><span class="title">使用方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="使用方法" class="mobile-dropdown-title"><span class="title">使用方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/features/" class="nav-link">
+  功能表
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-mode/" class="nav-link">
+  开启 Web 模式
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-clanbattle/" class="nav-link">
+  Web 模式公会战
+</a></li><li class="dropdown-item"><!----> <a href="/usage/manual/" class="nav-link">
+  公会战手册
+</a></li><li class="dropdown-item"><!----> <a href="/usage/security/" class="nav-link">
+  安全性
+</a></li></ul></div></div><div class="nav-item"><a href="/usage/faq/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/usage/cannot-open-webpage/" class="nav-link">
+  链接无法打开
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/project/open-source/" class="nav-link">
+  开源软件许可
+</a></li><li class="dropdown-item"><!----> <a href="/project/changelog/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-item"><!----> <a href="/project/contributors/" class="nav-link">
+  项目贡献者
+</a></li></ul></div></div> <a href="https://github.com/pcrbot/yobot-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安装方法" class="dropdown-title"><span class="title">安装方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="安装方法" class="mobile-dropdown-title"><span class="title">安装方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/install/transfer-from-plugin/" class="nav-link">
+  从插件版迁移
+</a></li><li class="dropdown-item"><!----> <a href="/install/docker-script/" class="nav-link">
+  Linux 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Linux-gocqhttp/" class="nav-link">
+  Linux 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-mirai-auto/" class="nav-link">
+  Windows 一键部署
+</a></li><li class="dropdown-item"><!----> <a href="/install/Windows-gocqhttp/" class="nav-link">
+  Windows 部署方法
+</a></li><li class="dropdown-item"><!----> <a href="/install/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/install/community-installer/" class="nav-link">
+  pcrbot 社区提供的部署方法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="使用方法" class="dropdown-title"><span class="title">使用方法</span> <span class="arrow down"></span></button> <button type="button" aria-label="使用方法" class="mobile-dropdown-title"><span class="title">使用方法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/features/" class="nav-link">
+  功能表
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-mode/" class="nav-link">
+  开启 Web 模式
+</a></li><li class="dropdown-item"><!----> <a href="/usage/web-clanbattle/" class="nav-link">
+  Web 模式公会战
+</a></li><li class="dropdown-item"><!----> <a href="/usage/manual/" class="nav-link">
+  公会战手册
+</a></li><li class="dropdown-item"><!----> <a href="/usage/security/" class="nav-link">
+  安全性
+</a></li></ul></div></div><div class="nav-item"><a href="/usage/faq/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/usage/cannot-open-webpage/" class="nav-link">
+  链接无法打开
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/project/open-source/" class="nav-link">
+  开源软件许可
+</a></li><li class="dropdown-item"><!----> <a href="/project/changelog/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-item"><!----> <a href="/project/contributors/" class="nav-link">
+  项目贡献者
+</a></li></ul></div></div> <a href="https://github.com/pcrbot/yobot-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="windows-使用-yobot-源码版-部署"><a href="#windows-使用-yobot-源码版-部署" class="header-anchor">#</a> Windows 使用 yobot 源码版 部署</h1> <p>首先强烈不建议使用此方法部署，建议仅在操作系统为Windows且需要用到额外的yobot插件时使用</p> <p>本文不保证完全有效，无效时请放弃并回到<a href="/install/Windows-gocqhttp.html">Windows 使用 go-cqhttp 部署</a></p> <h2 id="部署过程"><a href="#部署过程" class="header-anchor">#</a> 部署过程</h2> <h3 id="环境准备"><a href="#环境准备" class="header-anchor">#</a> 环境准备</h3> <h4 id="安装python"><a href="#安装python" class="header-anchor">#</a> 安装python</h4> <ul><li><p>安装 python 环境；或者使用 conda / virtualenv 等 python 虚拟环境</p> <p>https://www.python.org/downloads/</p> <p>https://docs.conda.io/en/latest/</p> <p>https://virtualenv.pypa.io/</p></li></ul> <p>请使用 <code>py -V</code> 命令确认 python 版本，<strong>yobot 支持的 python 版本为 3.6 以上</strong></p> <h3 id="部署-yobot"><a href="#部署-yobot" class="header-anchor">#</a> 部署 yobot</h3> <ul><li><p>下载源码，使用 stable 稳定版分支，解压</p> <p>https://github.com/yuudi/yobot/archive/refs/heads/stable.zip</p></li></ul> <p>进入 <code>（刚解压出的文件夹）\src\client\</code> 目录，在空白处Shift+右键，点击“在此处打开 PowerShell 窗口”</p> <div class="language-PowerShell extra-class"><pre class="language-powershell"><code><span class="token comment"># 安装依赖</span>
+pip3 install <span class="token operator">-</span>r requirements<span class="token punctuation">.</span>txt <span class="token operator">--</span>user
+<span class="token comment"># 国内可加上参数 -i https://pypi.tuna.tsinghua.edu.cn/simple</span>
+
+<span class="token comment"># 启动yobot</span>
+py main<span class="token punctuation">.</span>py
+</code></pre></div><p>启动后应该会报错，提示 AttributeError: type object '_asyncio.Task' has no attribute 'current_task'</p> <p>原因是 aiocqhttp 依赖的 Quart 0.6.15 调用了 asyncio 一个已被弃用的方法</p> <p>一个可行的解决方法如下：</p> <ul><li><p>修改报错信息中 <code>（略，python安装路径）\lib\site-packages\quart\local.py</code> 中的第35行</p> <p>将 <code>task = asyncio.Task.current_task()</code> 修改为 <code>task = asyncio.current_task()</code> （删除.Task）</p> <p>然后重新启动yobot</p></li></ul> <h3 id="部署-go-cqhttp"><a href="#部署-go-cqhttp" class="header-anchor">#</a> 部署 go-cqhttp</h3> <p>后续内容同<a href="/install/Windows-gocqhttp.html">Windows 使用 go-cqhttp 部署</a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/pcrbot/yobot-docs/edit/master/install/Windows-yobot.md" target="_blank" rel="noopener noreferrer">编辑此页面</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.c5ff52d8.js" defer></script><script src="/assets/js/2.bf67b911.js" defer></script><script src="/assets/js/18.f78fc116.js" defer></script>
+  </body>
+</html>
