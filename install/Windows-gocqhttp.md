@@ -2,7 +2,7 @@
 
 ## 部署过程
 
-本文为便携版部署方式
+本文为便携版部署方式，源码版请参考[Windows部署yobot源码版](./Windows-yobot.md)（不推荐）
 
 ### 部署 yobot
 
