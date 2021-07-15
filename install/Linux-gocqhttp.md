@@ -59,7 +59,7 @@ sh yobotg.sh
 
 按下 `ctrl-a , c` 连续组合键，新建一个 screen shell
 
-### 部署 mirai
+### 部署 go-cqhttp
 
 #### 下载 go-cqhttp
 
@@ -70,9 +70,9 @@ sh yobotg.sh
 ```shell
 mkdir -p ~/qqbot/mirai
 cd ~/qqbot/mirai
-wget https://down.yobot.club/yobot/go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
-tar zxvf go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
-rm go-cqhttp-v0.9.29-fix2-linux-amd64.tar.gz
+wget https://github.dihe.moe/Mrs4s/go-cqhttp/releases/download/v1.0.0-beta4/go-cqhttp_linux_amd64.tar.gz
+tar zxvf go-cqhttp_linux_amd64.tar.gz
+rm go-cqhttp_linux_amd64.tar.gz
 ```
 
 #### 修改 go-cqhttp 配置文件
@@ -82,53 +82,31 @@ cd ~/qqbot/mirai
 
 # 先执行
 ./go-cqhttp
-# 此时会生成一个 config.hjson 文件
+# 通信方式选3（反向WS），此时会生成一个 config.yml 文件
 # 修改这个文件
-vim config.json
+vim config.yml
 ```
 
-修改配置文件如下
+修改配置文件以下内容
 
-```json
-{
-  "uin": 123456789,  // 填写作为机器人的 QQ 号
-  "password": "xxxxxxx",  // 填写作为机器人的 QQ 密码
-  "encrypt_password": false,
-  "password_encrypted": "",
-  "enable_db": false,
-  "access_token": "",
-  "relogin": {
-    "enabled": true,
-    "relogin_delay": 3,
-    "max_relogin_times": 0
-  },
-  "_rate_limit": {
-    "enabled": false,
-    "frequency": 1,
-    "bucket_size": 1
-  },
-  "post_message_format": "string",
-  "ignore_invalid_cqcode": false,
-  "force_fragmented": true,
-  "heartbeat_interval": 5,
-  "use_sso_address": false,
-  "http_config": {
-    "enabled": false
-  },
-  "ws_config": {
-    "enabled": false
-  },
-  "ws_reverse_servers": [
-    {
-      "enabled": true,
-      "reverse_url": "ws://localhost:9222/ws/",
-      "reverse_reconnect_interval": 3000
-    }
-  ],
-  "web_ui": {
-    "enabled": false
-  }
-}
+- uin: `BOT的QQ账号`
+- password: `BOT的QQ密码`，密码为空时使用扫码登录
+- （ws-reverse）universal: `ws://127.0.0.1:9222/ws/`
+
+```yml
+# go-cqhttp 配置文件
+
+account: # 账号相关
+  uin: 123456 # QQ账号
+  password: '' # 密码为空时使用扫码登录
+```
+```yml
+# 连接服务列表
+servers:
+  # 反向WS设置
+  - ws-reverse:
+      # 反向WS Universal 地址
+      universal: ws://127.0.0.1:9222/ws/
 ```
 
 #### 启动 go-cqhttp 并登录 QQ
@@ -144,6 +122,10 @@ chmod +x go-cqhttp
 ## 验证安装
 
 向机器人发送“version”，机器人会回复当前版本
+
+向机器人私聊发送“登录”，机器人会回复登录链接（第一个发送登录的人自动获得主人权限）
+
+向机器人发送“重启”（需要权限），机器人会重启
 
 ## 常见问题
 
