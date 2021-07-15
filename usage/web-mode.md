@@ -114,8 +114,8 @@ SSLProxyProtocol all -SSLv3
         RemoteIPInternalProxy 127.0.0.1/24
     </IfModule>
     <Location />
-        ProxyPass http://localhost:9222
-        ProxyPassReverse http://localhost:9222
+        ProxyPass http://127.0.0.1:9222
+        ProxyPassReverse http://127.0.0.1:9222
     </Location>
     <Location /cqhttp/ws/>
         Deny from All

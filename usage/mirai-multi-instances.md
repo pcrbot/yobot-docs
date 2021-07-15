@@ -102,12 +102,12 @@ login 987654321 efgh5678
   "ws_reverse_servers": [
     {
       "enabled": true,
-      "reverse_url": "ws://localhost:9222/ws/",
+      "reverse_url": "ws://127.0.0.1:9222/ws/",
       "reverse_reconnect_interval": 3000
     },
     {
       "enabled": true,
-      "reverse_url": "ws://localhost:8080/ws/",
+      "reverse_url": "ws://127.0.0.1:8080/ws/",
       "reverse_reconnect_interval": 3000
     }
   ]

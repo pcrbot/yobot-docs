@@ -12,59 +12,41 @@
 
 ![windows下正确启动图](/imgs/aaf38d1a5cbc1c87.jpg)
 
-### 部署 mirai
+### 部署 go-cqhttp
 
 #### 安装文本编辑器
 
 由于 Windows 自带的记事本编辑 `config.json` 文件时会出现问题，请先安装编程专用文本编辑器，比如这个：
 
-[下载notepad3](http://pan.yobot.win/share/Windows%E5%B7%A5%E5%85%B7/Notepad3.exe)
+[下载notepad3](https://github.dihe.moe/rizonesoft/Notepad3/releases/download/RELEASE_5.21.227.1/Notepad3Portable_5.21.227.1.paf.exe
+)
 
 #### 运行 go-cqhttp
 
 下载[go-cqhttp](https://github.com/Mrs4s/go-cqhttp/releases/latest)，Windows 用户选择 `windows-amd64.zip`  
 
-解压后获得 `go-cqhttp.exe`，在其同目录下创建一个 `config.json` 文件，填写如下内容
+解压后获得 `go-cqhttp.exe`，启动，提示未找到配置文件，通信方式选3（反向WS），回车
 
-```json
-{
-  "uin": 0, "←--------------------注释1": "作为机器人的 QQ 号",
-  "password": "", "←--------------注释2": "作为机器人的 QQ 密码",
-  "encrypt_password": false,
-  "password_encrypted": "",
-  "enable_db": false, "←----------注释3": "内置数据库，yobot 不需要，某些其他插件可能需要",
-  "access_token": "", "←----------注释4": "这里也可以填写事先准备好的 access_token",
-  "relogin": {
-    "enabled": true,
-    "relogin_delay": 3,
-    "max_relogin_times": 0
-  },
-  "_rate_limit": {
-    "enabled": false,
-    "frequency": 1,
-    "bucket_size": 1
-  },
-  "post_message_format": "string",
-  "ignore_invalid_cqcode": false,
-  "force_fragmented": true,
-  "heartbeat_interval": 5,
-  "http_config": {
-    "enabled": false
-  },
-  "ws_config": {
-    "enabled": false
-  },
-  "ws_reverse_servers": [
-    {
-      "enabled": true,
-      "reverse_url": "ws://localhost:9222/ws/",
-      "reverse_reconnect_interval": 3000
-    }
-  ],
-  "web_ui": {
-    "enabled": false
-  }
-}
+同目录下会自动创建一个 `config.yml` 文件，修改填写以下项目
+
+- uin: `BOT的QQ账号`
+- password: `BOT的QQ密码`，密码为空时使用扫码登录
+- （ws-reverse）universal: `ws://127.0.0.1:9222/ws/`
+
+```yml
+# go-cqhttp 配置文件
+
+account: # 账号相关
+  uin: 123456 # QQ账号
+  password: '' # 密码为空时使用扫码登录
+```
+```yml
+# 连接服务列表
+servers:
+  # 反向WS设置
+  - ws-reverse:
+      # 反向WS Universal 地址
+      universal: ws://127.0.0.1:9222/ws/
 ```
 
 双击启动 go-cqhttp 并登录
@@ -74,6 +56,10 @@
 ## 验证安装
 
 向机器人发送“version”，机器人会回复当前版本
+
+向机器人私聊发送“登录”，机器人会回复登录链接（第一个发送登录的人自动获得主人权限）
+
+向机器人发送“重启”（需要权限），机器人会重启
 
 ## 常见问题
 
